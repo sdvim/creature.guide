@@ -2,9 +2,22 @@
 layout: base
 ---
 
-<h1>Creature World</h1>
+<section class="splash">
+  <h1 class="splash__title">Creature World</h1>
+  <p class="splash__welcome">Welcome to The Creature World. You have arrived in a nearby magical dimension of love, divine intervention, and possibility.</p>
+  <nav class="splash__links">
+  {% for link in links %}
+    <a class="splash__link" href="{{ link.url }}" target="_blank">
+      <span>{{ link.title }}</span>
+    </a>
+  {% endfor %}
+  </nav>
+  <div class="splash__earth-container">
+    <div id="earth"></div>
+  </div>	
+</section>
 
-<div class="timeline">
+<section class="timeline">
   <h2 class="timeline__title">Journey Thus Far</h2>
   {% for event in timeline %}
   <div class="event">
@@ -15,4 +28,22 @@ layout: base
     <p class="event__body">{{ event.body | striptags(true) | replace('{', '<a href="#">') | replace('}', '</a>') | nl2br | safe }}</p>
   </div>
   {% endfor %}
-</div>
+</section>
+
+<script>
+window.addEventListener('load', function() {
+  const script = document.createElement('script');
+  script.src = '/static/miniature.earth.js';
+  document.body.appendChild(script);	
+});
+
+window.addEventListener('earthjsload', function() {
+  const myearth = new Earth('earth', {
+    location: { lat: 10, lng: -80 },
+    light: 'none',
+    mapSeaColor: '#1e4497',
+    mapLandColor: '#819647',
+    autoRotate: true,
+  });    
+});
+</script>
