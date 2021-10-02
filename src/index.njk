@@ -1,0 +1,15 @@
+---
+layout: base
+---
+
+<h1>Creature World</h1>
+
+<div class="timeline">
+  {% for event in timeline %}
+  <div class="timeline__event">
+    <h2>{{ event.title }}</h2>
+    <time>{{ event.date }}</time>
+    <p>{{ event.body | striptags(true) | replace('{', '<a href="#">') | replace('}', '</a>') | nl2br | safe }}</p>
+  </div>
+  {% endfor %}
+</div>
