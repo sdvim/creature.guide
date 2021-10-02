@@ -1,0 +1,51 @@
+.timeline__title {
+  text-align: center;
+}
+
+.event {
+  max-width: 45rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 2fr 2.5rem 3fr;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  grid-template-areas:
+    "time marker title"
+    ". line body";
+  &__marker {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    align-self: center;
+    opacity: .125;
+    grid-area: marker;
+    box-shadow: 0 0 0 4px inset currentColor;
+  }
+  &__line {
+    width: 4px;
+    background: currentColor;
+    opacity: .125;
+    border-radius: 2px;
+    grid-area: line;
+    justify-self: center;
+  }
+  &__time {
+    margin: 0;
+    align-self: center;
+    text-align: right;
+    grid-area: time;
+  }
+  &__title {
+    margin: 0;
+    align-self: center;
+    grid-area: title;
+  }
+  &__body {
+    margin: 0;
+    grid-area: body;
+  }
+  &:last-child .event__line {
+    display: none;
+  }
+}
