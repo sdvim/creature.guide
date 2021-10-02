@@ -1,7 +1,11 @@
-.timeline__title {
-  text-align: center;
-  margin-bottom: 1em;
+.timeline {
+  padding: 0 1rem;
+  &__title {
+    text-align: center;
+    margin-bottom: 1em;
+  }  
 }
+
 
 .event {
   max-width: 45rem;
@@ -46,5 +50,19 @@
   }
   &:last-child .event__line {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .event {
+    grid-template-columns: 2.5rem auto;
+    grid-template-areas:
+      "marker title"
+      "line time"
+      "line body";
+    
+    &__time {
+      text-align: left;
+    }
   }
 }

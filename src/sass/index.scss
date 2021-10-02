@@ -56,3 +56,10 @@ h6 {
 
 @import 'splash';
 @import 'timeline';
+
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 18px;
+  }
+}

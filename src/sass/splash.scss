@@ -65,3 +65,17 @@
     z-index: -1;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .splash {
+    color: unset;
+    text-shadow: unset;
+    &__earth-container {
+      position: unset;
+      z-index: 0;
+    }
+    &__title {
+      font-size: 2rem;
+    }
+  }
+}
