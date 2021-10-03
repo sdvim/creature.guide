@@ -69,4 +69,28 @@ window.addEventListener('earthjsload', function() {
     autoRotateStart: 0,
   });    
 });
+
+const lerp = (x, y, a) => x * (1 - a) + y * a;
+let lastKnownScrollPosition = 0;
+let ticking = false;
+
+function doSomething(scrollPos) {
+  const docHeight = document.body.offsetHeight;
+  const winHeight = window.innerHeight;
+  const scrollPercent = scrollPos / (docHeight - winHeight);
+  const x = lerp(0.1, 1, scrollPercent);
+  const y = lerp(0.5, 1, scrollPercent);
+  document.querySelector('#rainbow').style.transform = `scale(${x}, ${y})`;
+}
+
+document.addEventListener('scroll', function(e) {
+  lastKnownScrollPosition = window.scrollY;
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      doSomething(lastKnownScrollPosition);
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
 </script>
