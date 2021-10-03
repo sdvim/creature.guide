@@ -69,6 +69,8 @@
     height: 100vmin;
     position: absolute;
     top: 0;
+    bottom: 0;
+    margin: auto;
   }
 }
 
@@ -78,6 +80,7 @@
     text-shadow: unset;
     &__earth-container {
       position: unset;
+      margin: unset;
       z-index: 0;
     }
     &__title {
