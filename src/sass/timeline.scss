@@ -72,9 +72,22 @@
       "marker title"
       "line time"
       "line body";
-    
+    // TODO: refactor to inherit from parent property to be more dry
+    &:nth-child(odd) { 
+      grid-template-areas:
+      "marker title"
+      "line time"
+      "line body";
+      .event__title,
+      .event__body {
+        text-align: left;
+      }
+    }
     &__time {
       text-align: left;
+    }
+    &__body {
+      padding-bottom: 1rem;
     }
   }
 }
