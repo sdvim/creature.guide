@@ -30,6 +30,25 @@ layout: base
   {% endfor %}
 </section>
 
+<section class="team">
+  <h2 class="team__title">The Team</h2>
+  <div class="team__container">
+    {% for teammate in team %}
+    <div class="teammate">
+      <div class="teammate__avatar">
+        <img class="teammate__avatar__image" src="/img/{{ teammate.creature }}.jpg" />
+        <img class="teammate__avatar__eyes" src="/img/{{ teammate.creature }}-eyes.jpg" />
+      </div>
+      <div class="teammate__info">
+        <h3 class="teammate__name">{{ teammate.name }}</h3>
+        <h5 class="teammate__role">{{ teammate.role }}</h5>
+        <a class="teammate__twitter" href="//twitter.com/{{ teammate.twitter }}" target="_blank">@{{ teammate.twitter }}</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
 <script>
 window.addEventListener('load', function() {
   const script = document.createElement('script');

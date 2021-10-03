@@ -21,7 +21,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -57,6 +57,7 @@ h6 {
 
 @import 'splash';
 @import 'timeline';
+@import 'team';
 
 
 @media only screen and (max-width: 600px) {
