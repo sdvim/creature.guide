@@ -17,7 +17,7 @@
   --orange: #DC7111;
   --yellow: #F5B402;
   --blue: #5C7F93;
-
+  --sky-blue: #7aa1be;
 }
 
 html {
@@ -39,6 +39,7 @@ body {
   line-height: 1.5;
   margin: 0;
   overflow-x: hidden;
+  background: linear-gradient(transparent 50vh, var(--sky-blue));
 }
 
 a {
@@ -58,10 +59,10 @@ h6 {
 @import 'splash';
 @import 'timeline';
 @import 'team';
-
+@import 'rainbow';
 
 @media only screen and (max-width: 600px) {
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
 }

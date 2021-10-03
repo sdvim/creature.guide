@@ -1,0 +1,14 @@
+#rainbow {
+  width: 6rem;
+  height: 100vh;
+  position: fixed;
+  background: url('/img/bg-ascension-rainbow.png') repeat-y center;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+  transform-origin: top center;
+  transform: scale(0.05, 0.5);
+  pointer-events: none;
+}
