@@ -71,6 +71,8 @@ window.addEventListener('earthjsload', function() {
 });
 
 const lerp = (x, y, a) => x * (1 - a) + y * a;
+const easeInExpo = (x) => x === 0 ? 0 : Math.pow(2, 10 * x - 10);
+const easeInCirc = (x) => 1 - Math.sqrt(1 - Math.pow(x, 2));
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
@@ -78,8 +80,8 @@ function doSomething(scrollPos) {
   const docHeight = document.body.offsetHeight;
   const winHeight = window.innerHeight;
   const scrollPercent = scrollPos / (docHeight - winHeight);
-  const x = lerp(0.1, 1, scrollPercent);
-  const y = lerp(0.5, 1, scrollPercent);
+  const x = lerp(0.05, 1, easeInCirc(scrollPercent));
+  const y = lerp(0.5, 1, easeInExpo(scrollPercent));
   document.querySelector('#rainbow').style.transform = `scale(${x}, ${y})`;
 }
 
