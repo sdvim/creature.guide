@@ -8,11 +8,11 @@
 
 
 .event {
-  max-width: 45rem;
+  max-width: 40rem;
   margin: 0 auto;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 2fr 2.5rem 3fr;
+  grid-template-columns: 1fr 2.5rem 1fr;
   gap: 0.5rem 1rem;
   margin-bottom: 0.5rem;
   grid-template-areas:
@@ -46,10 +46,22 @@
   }
   &__body {
     grid-area: body;
-    padding-bottom: 1em;
+    padding-bottom: 4rem;
   }
   &:last-child .event__line {
     display: none;
+  }
+  &:nth-child(odd) {
+    grid-template-areas:
+      "title marker time"
+      "body line .";
+    .event__time {
+      text-align: left;
+    }
+    .event__title,
+    .event__body {
+      text-align: right;
+    }
   }
 }
 
