@@ -16,7 +16,8 @@
   gap: 0.5rem 1rem;
   margin-bottom: 0.5rem;
   grid-template-areas:
-    "time marker title"
+    ". marker title"
+    ". line time"
     ". line body";
   &__marker {
     width: 2.5rem;
@@ -37,7 +38,6 @@
   }
   &__time {
     align-self: center;
-    text-align: right;
     grid-area: time;
   }
   &__title {
@@ -53,11 +53,10 @@
   }
   &:nth-child(odd) {
     grid-template-areas:
-      "title marker time"
+      "title marker ."
+      "time line ."
       "body line .";
-    .event__time {
-      text-align: left;
-    }
+    .event__time,
     .event__title,
     .event__body {
       text-align: right;
@@ -78,13 +77,11 @@
       "marker title"
       "line time"
       "line body";
+      .event__time,
       .event__title,
       .event__body {
         text-align: left;
       }
-    }
-    &__time {
-      text-align: left;
     }
     &__body {
       padding-bottom: 1rem;
