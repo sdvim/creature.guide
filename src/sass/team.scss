@@ -41,7 +41,7 @@
       visibility: hidden;
       pointer-events: none;
       animation: blinking steps(3, start) infinite 4s;
-      animation-play-state: pause;
+      animation-play-state: paused;
     }
   }
   &:nth-child(odd) {
@@ -55,7 +55,7 @@
     }
   }
   &:hover .teammate__avatar__eyes {
-    visibility: visible;
+    visibility: visible !important;
   }
   &:nth-child(1) .teammate__avatar__eyes {
     animation-delay: 2.2s;
