@@ -32,7 +32,8 @@ function doSomething(scrollPos) {
   const docHeight = document.body.offsetHeight;
   const winHeight = window.innerHeight;
   const scrollPercent = scrollPos / (docHeight - winHeight);
-  const { x, y } = scales[Math.round(scrollPercent * 100)];
+  const index = Math.min(100, Math.max(0, Math.round(scrollPercent * 100)));
+  const { x, y } = scales[index];
   document.querySelector("#rainbow").style.transform = `scale(${x}, ${y})`;
   if (window.innerWidth <= 600)
     document.querySelector("#rainbow").style.opacity = Math.min(1, x * 2);
