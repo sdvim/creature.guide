@@ -51,6 +51,16 @@ layout: base
   </div>
 </section>
 
+<section class="faq">
+  <h2 class="faq__title">FAQ</h2>
+  {% for qa in faq %}
+  <div class="qa">
+    <h3>{{ qa.question }}</h3>
+    <p>{{ qa.answer }}</p>
+  </div>
+  {% endfor %}
+</section>
+
 <section class="footer">
   <h2 class="footer__title">Enjoy your stay.</h2>
 </section>

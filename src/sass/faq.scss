@@ -1,0 +1,35 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 1rem;
+  &__title {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+}
+
+.qa {
+  margin-bottom: 2rem;
+  align-self: flex-end;
+  width: 45%;
+  &:nth-child(odd) {
+    align-self: flex-start;
+    text-align: right;
+  }
+}
+
+* {
+  outline: 1px solid;
+}
+
+@media only screen and (max-width: 600px) {
+  .qa {
+    width: 100%;
+    &:nth-child(odd) {
+      text-align: left;
+    }
+  }
+}
