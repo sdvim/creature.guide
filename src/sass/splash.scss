@@ -32,37 +32,21 @@
     position: relative;
     font-weight: bold;
     text-decoration: none;
-    color: var(--red);
+    color: white;
+    margin: 0 0.5rem;
     text-shadow: none;
     z-index: 1;
-    transition: color 500ms ease-in-out;
-    span {
-      position: relative;
-      z-index: 1;
-    }
-    &::after {
-      background: linear-gradient(
-        var(--red) 0%, var(--red) 25%,
-        var(--orange) 25%, var(--orange) 50%,
-        var(--yellow) 50%, var(--yellow) 75%,
-        var(--blue) 75%), var(--blue) 100%;
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 500ms ease-in-out;
-    }
     &:hover {
-      color: white;
-      &::after {
-        transform-origin: left;
-        transform: scaleX(1);
-      }
+      animation: radial-rainbow-zoom 0.25s infinite;
+    }
+    &--twitter {
+      background-color: rgb(29, 155, 240);
+    }
+    &--discord {
+      background-color: #586aea;
+    }
+    &--opensea {
+      background-color: rgb(32, 129, 226);
     }
   }
   &__earth-container {
@@ -87,5 +71,45 @@
     &__title {
       font-size: 2rem;
     }
+  }
+}
+
+@keyframes radial-rainbow-zoom {
+  0%,
+  100% {
+    background: repeating-radial-gradient(
+      circle at center,
+      var(--red) 0.0rem, var(--red) 0.25rem,
+      var(--orange) 0.25rem, var(--orange) 0.50rem,
+      var(--yellow) 0.50rem, var(--yellow) 0.75rem,
+      var(--blue) 0.75rem, var(--blue) 1.0rem
+    );
+  }
+  25% {
+    background: repeating-radial-gradient(
+      circle at center,
+      var(--orange) 0.0rem, var(--orange) 0.25rem,
+      var(--yellow) 0.25rem, var(--yellow) 0.50rem,
+      var(--blue) 0.50rem, var(--blue) 0.75rem,
+      var(--red) 0.75rem, var(--red) 1.0rem
+    );
+  }
+  50% {
+    background: repeating-radial-gradient(
+      circle at center,
+      var(--yellow) 0.0rem, var(--yellow) 0.25rem,
+      var(--blue) 0.25rem, var(--blue) 0.50rem,
+      var(--red) 0.50rem, var(--red) 0.75rem,
+      var(--orange) 0.75rem, var(--orange) 1.0rem
+    );
+  }
+  75% {
+    background: repeating-radial-gradient(
+      circle at center,
+      var(--blue) 0.0rem, var(--blue) 0.25rem,
+      var(--red) 0.25rem, var(--red) 0.50rem,
+      var(--orange) 0.50rem, var(--orange) 0.75rem,
+      var(--yellow) 0.75rem, var(--yellow) 1.0rem
+    );
   }
 }
