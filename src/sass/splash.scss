@@ -64,6 +64,10 @@
     width: 75vmin;
     height: 75vmin;
     padding: 2rem;
+    pointer-events: none;
+    > * {
+      pointer-events: initial;
+    }
   }
   &__earth-container {
     width: 100vmin;
