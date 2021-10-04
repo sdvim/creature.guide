@@ -12,19 +12,15 @@
   &__title {
     font-size: 3rem;
     line-height: 1;
-    position: relative;
-    z-index: 1;
   }
   &__welcome {
     max-width: 54ch;
     margin: 1em 0;
-    position: relative;
-    z-index: 1;
   }
   &__links {
     display: flex;
-    position: relative;
-    z-index: 1;
+    align-items: center;
+    justify-content: center;
   }
   &__link {
     display: flex;
@@ -58,6 +54,17 @@
       height: 1.5em;
     }
   }
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 75vmin;
+    height: 75vmin;
+    padding: 2rem;
+  }
   &__earth-container {
     width: 100vmin;
     height: 100vmin;
@@ -76,6 +83,11 @@
       position: unset;
       margin: unset;
       z-index: 0;
+    }
+    &__content {
+      width: unset;
+      height: unset;
+      display: unset;
     }
     &__title {
       font-size: 2rem;

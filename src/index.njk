@@ -8,15 +8,17 @@ layout: base
   <div class="splash__earth-container">
     <div id="earth"></div>
   </div>
-  <h1 class="splash__title">Creature World</h1>
-  <p class="splash__welcome">Welcome to The Creature World. You have arrived in a nearby magical dimension of love, divine intervention, and possibility.</p>
-  <nav class="splash__links">
-  {% for link in links %}
-    <a class="splash__link splash__link--{{ link.title | lower }}" href="{{ link.url }}" target="_blank">
-      <img class="splash__link__icon" alt="{{ link.title }}" src="/img/{{ link.title | lower }}.svg" />
-    </a>
-  {% endfor %}
-  </nav>
+  <div class="splash__content">
+    <h1 class="splash__title">Creature World</h1>
+    <p class="splash__welcome">Welcome to the Creature World. You have arrived in a nearby magical dimension of love, divine intervention, and possibility.</p>
+    <nav class="splash__links">
+    {% for link in links %}
+      <a class="splash__link splash__link--{{ link.title | lower }}" href="{{ link.url }}" target="_blank">
+        <img class="splash__link__icon" alt="{{ link.title }}" src="/img/{{ link.title | lower }}.svg" />
+      </a>
+    {% endfor %}
+    </nav>
+  </div>
 </section>
 
 <section class="timeline">
