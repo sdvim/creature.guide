@@ -2,6 +2,18 @@ window.addEventListener("load", function () {
   const script = document.createElement("script");
   script.src = "/lib/miniature.earth.js";
   document.body.appendChild(script);
+
+  document
+    .querySelector(".header__theme-toggle")
+    .addEventListener("click", function (e) {
+      e.preventDefault;
+      const isDarkModeOn = document.body.classList.contains("dark-theme");
+
+      document.body.classList.add(isDarkModeOn ? "light-theme" : "dark-theme");
+      document.body.classList.remove(
+        !isDarkModeOn ? "light-theme" : "dark-theme"
+      );
+    });
 });
 
 window.addEventListener("earthjsload", function () {
@@ -51,3 +63,11 @@ document.addEventListener("scroll", function (e) {
     ticking = true;
   }
 });
+
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+if (prefersDarkScheme.matches) {
+  document.body.classList.add("dark-theme");
+} else {
+  document.body.classList.add("light-theme");
+  document.body.classList.remove("dark-theme");
+}

@@ -23,8 +23,6 @@
   --earth: #819647;
   --white: #fff;
   --black: #000;
-  --background-color: var(--white);
-  --foreground-color: var(--black);
 }
 
 html {
@@ -46,12 +44,31 @@ body {
   line-height: 1.5;
   margin: 0;
   overflow-x: hidden;
-  background: var(--background-color) linear-gradient(transparent 50vh, var(--sky-blue) calc(100% - 100vh));
+  background: var(--background-color) linear-gradient(var(--background-color) 100vh, var(--sky-blue) calc(100% - 100vh));
+  // transition: background-color 300ms ease-in-out;
   color: var(--foreground-color);
+  &.dark-theme {
+    --background-color: var(--midnight);
+    --foreground-color: var(--white);
+    --link-color: var(--sky-blue);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --background-color: var(--midnight);
+    --foreground-color: var(--white);
+    --link-color: var(--sky-blue);
+  }
+  body.light-theme {
+    --background-color: var(--white);
+    --foreground-color: var(--black);
+    --link-color: var(--ocean);
+  }
 }
 
 p a {
-  color: var(--ocean);
+  color: var(--link-color);
   text-decoration: none;
   position: relative;
   white-space: nowrap;
@@ -89,6 +106,7 @@ h6 {
   margin: 0;
 }
 
+@import 'header';
 @import 'splash';
 @import 'timeline';
 @import 'team';
