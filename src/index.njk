@@ -25,7 +25,7 @@ layout: base
     <div class="event__line"></div>
     <h3 class="event__title">{{ event.title }}</h3>
     <h5 class="event__time">{{ event.date }}</h5>
-    <p class="event__body">{{ event.body | striptags(true) | replace('{', '<a href="#">') | replace('}', '</a>') | nl2br | safe }}</p>
+    <p class="event__body">{{ event.body | striptags(true) | replace('{', '<a href="' + event.linkUrl + '" target="_blank">') | replace('}', '</a>') | nl2br | safe }}</p>
   </div>
   {% endfor %}
 </section>
