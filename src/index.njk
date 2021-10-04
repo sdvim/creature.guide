@@ -77,6 +77,12 @@ window.addEventListener('earthjsload', function() {
 const lerp = (x, y, a) => x * (1 - a) + y * a;
 const easeInExpo = (x) => x === 0 ? 0 : Math.pow(2, 10 * x - 10);
 const easeInCirc = (x) => 1 - Math.sqrt(1 - Math.pow(x, 2));
+
+const scales = [...Array(101)].map((_, i) => ({
+  x: lerp(0.05, 1, easeInCirc(i / 100)),
+  y: lerp(0.5, 1, easeInExpo(i / 100)),
+}));
+
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
@@ -84,8 +90,7 @@ function doSomething(scrollPos) {
   const docHeight = document.body.offsetHeight;
   const winHeight = window.innerHeight;
   const scrollPercent = scrollPos / (docHeight - winHeight);
-  const x = lerp(0.05, 1, easeInCirc(scrollPercent));
-  const y = lerp(0.5, 1, easeInExpo(scrollPercent));
+  const {x, y} = scales[Math.round(scrollPercent * 100)];
   document.querySelector('#rainbow').style.transform = `scale(${x}, ${y})`;
 }
 
