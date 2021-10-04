@@ -46,7 +46,9 @@ layout: base
       <div class="teammate__info">
         <h3 class="teammate__name">{{ teammate.name }}</h3>
         <h5 class="teammate__role">{{ teammate.role }}</h5>
-        <a class="teammate__twitter" href="//twitter.com/{{ teammate.twitter }}" target="_blank">@{{ teammate.twitter }}</a>
+        <p>
+          <a class="teammate__twitter" href="//twitter.com/{{ teammate.twitter }}" target="_blank">@{{ teammate.twitter }}</a>
+        </p>
       </div>
     </div>
     {% endfor %}
