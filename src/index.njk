@@ -100,6 +100,10 @@ function doSomething(scrollPos) {
   const scrollPercent = scrollPos / (docHeight - winHeight);
   const {x, y} = scales[Math.round(scrollPercent * 100)];
   document.querySelector('#rainbow').style.transform = `scale(${x}, ${y})`;
+  if (window.innerWidth <= 600)
+    document.querySelector('#rainbow').style.opacity = Math.min(1, x * 2);
+  else if (document.querySelector('#rainbow').style.opacity != 1)
+    document.querySelector('#rainbow').style.opacity = 1;
 }
 
 document.addEventListener('scroll', function(e) {
