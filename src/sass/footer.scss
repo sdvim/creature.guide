@@ -2,6 +2,8 @@
   background:
   url('/img/bg-ascension-road.png') no-repeat bottom center,
   url('/img/bg-ascension-hills.png') repeat-x bottom;
+  background-size: 7.5rem, auto 5.125rem;
+  image-rendering: crisp-edges;
   display: flex;
   flex-direction: column;
   justify-content: center;
