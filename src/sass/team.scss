@@ -32,6 +32,7 @@
     }
     &__eyes {
       width: 3rem;
+      height: 1.5rem;
       position: absolute;
       top: 0;
       left: 0;
@@ -42,6 +43,7 @@
       pointer-events: none;
       animation: blinking steps(3, start) infinite 4s;
       animation-play-state: paused;
+      background-size: contain;
     }
   }
   &:nth-child(odd) {
