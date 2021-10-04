@@ -18,6 +18,13 @@
   --yellow: #F5B402;
   --blue: #5C7F93;
   --sky-blue: #7aa1be;
+  --midnight: #171e28;
+  --ocean: #1e4497;
+  --earth: #819647;
+  --white: #fff;
+  --black: #000;
+  --background-color: var(--white);
+  --foreground-color: var(--black);
 }
 
 html {
@@ -39,11 +46,37 @@ body {
   line-height: 1.5;
   margin: 0;
   overflow-x: hidden;
-  background: linear-gradient(transparent 50vh, var(--sky-blue));
+  background: var(--background-color) linear-gradient(transparent 50vh, var(--sky-blue) calc(100% - 100vh));
+  color: var(--foreground-color);
 }
 
-a {
-  color: blue;
+p a {
+  color: var(--ocean);
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+  &::after {
+    content: '';
+    background: currentColor;
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  &:hover {
+    color: var(--red);
+    &::after {
+      background: linear-gradient(to left,
+        var(--blue) 0%, var(--blue) 25%,
+        var(--yellow) 25%, var(--yellow) 50%,
+        var(--orange) 50%, var(--orange) 75%,
+        var(--red) 75%, var(--red) 100%
+      ) repeat-x;
+      background-size: 2rem;
+    }
+  }
 }
 
 p,
