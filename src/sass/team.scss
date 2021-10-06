@@ -25,14 +25,16 @@
     height: 6rem;
     margin-right: 1rem;
     position: relative;
+    border-radius: 50%;
+    overflow: hidden;
     &__image {
       width: inherit;
       height: inherit;
       border-radius: 50%;
     }
     &__eyes {
-      width: 3rem;
-      height: 1.5rem;
+      width: inherit;
+      height: inherit;
       position: absolute;
       top: 0;
       left: 0;
