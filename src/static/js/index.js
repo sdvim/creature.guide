@@ -11,26 +11,53 @@ const planetImages = {
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL4AAAC+CAMAAAC8qkWvAAAB71BMVEUAAAAeRJceRJceRJceRJceRJceRJceRJceRJceRJceRJceRJceRJceRJceRJceRJdXcKjb1tDb1tDb1tAeRJceRJdLZ6VXcKh5irKPnLnBwsjb1tDb1tDb1tAeRJceRJfT0M7b1tDb1tBcdKrb1tAeRJceRJdRbKbb1tDb1tBrgK7b1tAeRJdAXqGXorujqr/b1tAeRJc1Vp5zhrHQzc3b1tApTZpEYaN7jLNieayMmbjb1tCor8Hb1tDb1tAeRJceRJdTbafb1tDb1tC5vMamrcDb1tAeRJfb1tAvUZybpL3KycseRJfExMm1ucWqsMHExcl1h7Fle61+j7RGY6OEk7bb1tCfp75qf67MyswmSpm9v8duga+dpr3b1tAtUJzb1tCxtsPb1tDb1tDb1tDb1tDb1tCAkLXb1tDb1tA4WZ9edqpIZKRqfq5keqyus8Lb1tDb1tCOmrlbc6nb1tCGlba0uMQ8W6Db1tAeRJdPaqYeRJceRJfb1tAeRJfb1tAeRJceRJfb1tAeRJegqb5ofa3b1tAeRJceRJePnLnb1tDb1tDb1tDb1tDb1tDb1tAeRJceRJceRJfb1tAeRJfb1tCVoLseRJfb1tAeRJceRJceRJceRJceRJdKZqQeRJceRJceRJceRJceRJceRJeowLEnAAAApXRSTlMAPU1jmcxcOC659f/wrR8XzJlcD6jb////////1qN7wv+9a/+tiuv/4YL/H1P///9F0f///8j//////5b/8HVF4f/RLv//imtT////Xv//////e////3v/////////9f8X/7qoSDjr/7iU////////Y0L//8L////bD/9CZsyzTTOUPSn//zQk6LOFZhToswrWo72cglf/x6uWdkh0aYVXCoWcyRSaGJHMAAAJmklEQVR42tXd/18UxxkH8MHv+JykguVYnsZcRYNV75Bl3eMIKl+OVCR7SuVEEVRMrVbvcq1E7QGlmJgvNViatkm0Sduk7R9aT0kf7mB3Zm5m7jbvn3i9fL30s+szz87O7C7MhIYtW7e9sH1N6ecdW3ay0Nu1ZVvj9t3gI7J9z7YtTSyUXtu6jYIHifxob3MLC5Wt+34MPK3RkjbLakfEn7zeHJbTvv8N4LNiWOmnB1rCnZ10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",
 };
 
+const lerp = (x, y, a) => x * (1 - a) + y * a;
+const easeInExpo = (x) => (x === 0 ? 0 : Math.pow(2, 10 * x - 10));
+const easeInCirc = (x) => 1 - Math.sqrt(1 - Math.pow(x, 2));
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min))) +
+  Math.ceil(min);
+const planets = {
+  ercon: null,
+  marius: null,
+  gomba: null,
+  uuary: null,
+  inciu: null,
+};
+let isDarkModeOn;
+
 window.addEventListener("load", function () {
   const script = document.createElement("script");
   script.src = "/lib/miniature.earth.js";
   document.body.appendChild(script);
 
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  if (prefersDarkScheme.matches) {
+    document.body.classList.add("dark-theme");
+  } else {
+    document.body.classList.add("light-theme");
+    document.body.classList.remove("dark-theme");
+  }
+  isDarkModeOn = document.body.classList.contains("dark-theme");
+
   document
     .querySelector(".header__theme-toggle")
     .addEventListener("click", function (e) {
       e.preventDefault;
-      const isDarkModeOn = document.body.classList.contains("dark-theme");
-
+      isDarkModeOn = document.body.classList.contains("dark-theme");
       document.body.classList.add(isDarkModeOn ? "light-theme" : "dark-theme");
       document.body.classList.remove(
         !isDarkModeOn ? "light-theme" : "dark-theme"
       );
+
+      Object.values(planets).map((planet) => {
+        planet.visible = !isDarkModeOn;
+      });
     });
 });
 
 window.addEventListener("earthjsload", function () {
-  const myearth = new Earth("earth", {
+  const miniEarth = new Earth("earth", {
     location: { lat: 10, lng: -80 },
     light: "none",
     mapSeaColor: "#1e4497",
@@ -41,51 +68,52 @@ window.addEventListener("earthjsload", function () {
     autoRotateStart: 0,
   });
 
-  myearth.addPoints({
+  planets.ercon = miniEarth.addPoints({
     points: [{ location: { lat: 0, lng: -18 }, scale: 20, offset: 46 }],
     image: planetImages.ercon,
+    visible: isDarkModeOn,
   });
 
-  myearth.addPoints({
+  planets.marius = miniEarth.addPoints({
     points: [{ location: { lat: 20, lng: -90 }, scale: 20, offset: 47 }],
     image: planetImages.marius,
+    visible: isDarkModeOn,
   });
 
-  myearth.addPoints({
+  planets.gomba = miniEarth.addPoints({
     points: [{ location: { lat: -30, lng: 60 }, scale: 22, offset: 45 }],
     image: planetImages.gomba,
+    visible: isDarkModeOn,
   });
 
-  myearth.addPoints({
+  planets.uuary = miniEarth.addPoints({
     points: [{ location: { lat: 30, lng: 130 }, scale: 22, offset: 48 }],
     image: planetImages.uuary,
+    visible: isDarkModeOn,
   });
 
-  myearth.addPoints({
+  planets.inciu = miniEarth.addPoints({
     points: [{ location: { lat: 10, lng: -160 }, scale: 25, offset: 42 }],
     image: planetImages.inciu,
+    visible: isDarkModeOn,
   });
 
-  const points = [];
+  const starPoints = [];
   for (let i = 0; i < 1000; i++) {
-    points.push({
+    starPoints.push({
       location: { lat: randomInt(-60, 60), lng: randomInt(-180, 180) },
-      offset: randomInt(50, 70),
+      offset: randomInt(52, 120),
       scale: 1,
       opacity: randomInt(20, 80) / 100,
       color: "#bab479",
     });
   }
-
-  myearth.addPoints({
-    points,
+  planets.stars = miniEarth.addPoints({
+    points: starPoints,
     scale: 0.5 + window.innerWidth / 1000,
+    visible: isDarkModeOn,
   });
 });
-
-const lerp = (x, y, a) => x * (1 - a) + y * a;
-const easeInExpo = (x) => (x === 0 ? 0 : Math.pow(2, 10 * x - 10));
-const easeInCirc = (x) => 1 - Math.sqrt(1 - Math.pow(x, 2));
 
 const scales = [...Array(101)].map((_, i) => ({
   x: lerp(0.05, 1, easeInCirc(i / 100)),
@@ -95,40 +123,22 @@ const scales = [...Array(101)].map((_, i) => ({
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
-function randomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-function doSomething(scrollPos) {
-  const docHeight = document.body.offsetHeight;
-  const winHeight = window.innerHeight;
-  const scrollPercent = scrollPos / (docHeight - winHeight);
-  const index = Math.min(100, Math.max(0, Math.round(scrollPercent * 100)));
-  const { x, y } = scales[index];
-  document.querySelector("#rainbow").style.transform = `scale(${x}, ${y})`;
-  if (window.innerWidth <= 600)
-    document.querySelector("#rainbow").style.opacity = Math.min(1, x * 2);
-  else if (document.querySelector("#rainbow").style.opacity != 1)
-    document.querySelector("#rainbow").style.opacity = 1;
-}
-
 document.addEventListener("scroll", function (e) {
   lastKnownScrollPosition = window.scrollY;
   if (!ticking) {
-    window.requestAnimationFrame(function () {
-      doSomething(lastKnownScrollPosition);
+    window.requestAnimationFrame(() => {
+      const docHeight = document.body.offsetHeight;
+      const winHeight = window.innerHeight;
+      const scrollPercent = lastKnownScrollPosition / (docHeight - winHeight);
+      const index = Math.min(100, Math.max(0, Math.round(scrollPercent * 100)));
+      const { x, y } = scales[index];
+      document.querySelector("#rainbow").style.transform = `scale(${x}, ${y})`;
+      if (window.innerWidth <= 600)
+        document.querySelector("#rainbow").style.opacity = Math.min(1, x * 2);
+      else if (document.querySelector("#rainbow").style.opacity != 1)
+        document.querySelector("#rainbow").style.opacity = 1;
       ticking = false;
     });
     ticking = true;
   }
 });
-
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-if (prefersDarkScheme.matches) {
-  document.body.classList.add("dark-theme");
-} else {
-  document.body.classList.add("light-theme");
-  document.body.classList.remove("dark-theme");
-}
