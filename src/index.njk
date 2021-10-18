@@ -73,11 +73,11 @@ layout: base
 
 <section class="press">
   <h2 class="press__title">Press</h2>
-  {% for link in press %}
-  <div class="link">
-    <h3><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></h3>
+  <div class="press__items">
+    {% for link in press %}
+    <p class="press__item"><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></p>
+    {% endfor %}
   </div>
-  {% endfor %}
 </section>
 
 <section class="footer">
