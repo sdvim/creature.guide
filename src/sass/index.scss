@@ -9,6 +9,8 @@
   --midnight: #171e28;
   --ocean: #1e4497;
   --earth: #819647;
+  --beige: #FEF9DB;
+  --brown: #312829;
   --white: #fff;
   --black: #000;
 }
@@ -30,7 +32,7 @@ html {
 body {
   font-family: 'Averia Serif Libre', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.33;
   margin: 0;
   overflow-x: hidden;
   background: var(--background-color) linear-gradient(var(--background-color) 100vh, var(--sky-blue) calc(100% - 100vh));
@@ -58,8 +60,8 @@ text {
     --foreground-color: var(--white);
     --link-color: var(--yellow);
     &.light-theme {
-      --background-color: var(--white);
-      --foreground-color: var(--black);
+      --background-color: var(--beige);
+      --foreground-color: var(--brown);
       --link-color: var(--ocean);
     }
   }
