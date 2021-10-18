@@ -1,18 +1,22 @@
 [
   {
-    "question": "How many Creatures do I need?",
-    "answer": "For each journey you will only ever need just one Creature to participate."
+    "question": "Where can I get a Creature?",
+    "answer": "The secondary market on OpenSea or NiftyGateway."
   },
   {
-    "question": "How can I find my Creature’s rarity?",
-    "answer": "We chose not to be listed on rarity sites. If you love your Creature, you have the rarest Creature in the universe."
+    "question": "Do I need anything else to be included in the Creature’s Journeys?",
+    "answer": "No, holding a single Creature is enough."
   },
   {
-    "question": "Do Creatures wear pants?",
-    "answer": "We don't know."
+    "question": "What is a Journey?",
+    "answer": "A digital or physical venture into the Creature World. Journey’s may include games, events, airdrops, and exclusive access."
   },
   {
-    "question": "Do I have IP rights over my Creature?",
-    "answer": "While we encourage people to make memes and derivative artwork of their Creature, no one is granted commercial license or IP ownership."
+    "question": "How can I check my Creature’s rarity?",
+    "answer": "Creature World does not not live on any rarity sites. If you love your Creature, you have the rarest Creature in the universe."
+  },
+  {
+    "question": "Do I have IP rights over my creature?",
+    "answer": "while we encourage people to make memes and derivative artwork of their Creature, no one is granted commercial license or IP ownership."
   }
 ]
