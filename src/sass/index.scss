@@ -135,13 +135,18 @@ p {
 
 section {
   padding: 2rem;
+  margin: 2rem auto;
   max-width: var(--bp-tablet);
 }
 
 .splash {
-  h2 {
-    font-weight: 300;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .grid {
@@ -154,9 +159,8 @@ section {
 .white-box {
   background: var(--white);
   border: 6px solid;
-  border-left: 0;
   color: var(--brown);
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 1rem;
 }
 
 .timeline {
@@ -242,7 +246,7 @@ section {
 }
 
 // @import 'header';
-// @import 'splash';
+@import 'hero';
 // @import 'timeline';
 // @import 'team';
 // @import 'faq';
@@ -255,6 +259,7 @@ section {
     font-size: 20px;
   }
   .white-box {
+    border-left: none;
     border-right: none;
     border-radius: 0;
   }
