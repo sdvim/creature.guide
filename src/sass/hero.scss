@@ -8,7 +8,7 @@
     margin: 0;
   }
   &__welcome {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 300;
     margin: 1rem 0;
   }
@@ -58,7 +58,7 @@
     z-index: 1;
     width: 75vmin;
     height: 75vmin;
-    padding: 2rem;
+    padding: 1rem;
     pointer-events: none;
     > * {
       pointer-events: initial;
@@ -78,8 +78,8 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .splash {
+@media only screen and (max-width: 540px) {
+  .hero {
     color: unset;
     text-shadow: unset;
     &__earth-container {
