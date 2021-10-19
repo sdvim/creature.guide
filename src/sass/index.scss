@@ -153,6 +153,43 @@ section {
   &__event {
     grid-column: 2 / span 5;
     padding-bottom: 4rem;
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -12.5%;
+      transform: translate(-50%);
+    }
+    &::before {
+      width: 6px;
+      height: 100%;
+      background: var(--brown);
+    }
+    &::after {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--white);
+      border-radius: 50%;
+      margin-top: -0.25rem;
+      border: 6px solid var(--brown);
+    }
+    &:last-child::before {
+      display: none;
+    }
+    &--future {
+      &::before {
+        display: none;
+      }
+      &::after {
+        background: transparent;
+      }
+    }
+    &--present:last-of-type::before {
+      background: linear-gradient(var(--brown) 10%, transparent 90%);
+    }
   }
 }
 

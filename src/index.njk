@@ -31,11 +31,13 @@ layout: base
   <h2>Journey Thus Far</h2>
   <div class="timeline grid">
   {% for event in timeline %}
-    <div class="timeline__event">
+    {% set el = 'div' if event.future else 'article' %}
+    {% set modifier = 'future' if event.future else 'present' %}
+    <{{el}} class="timeline__event timeline__event--{{ modifier }}">
       <h3>{{ event.title }}</h3>
       <h4>{{ event.date }}</h4>
       <p>{{ event.body | striptags(true) | replace('{', '<a href="' + event.linkUrl + '" target="_blank">') | replace('}', '</a>') | nl2br | safe }}</p>
-    </div>
+    </{{el}}>
   {% endfor %}
   </div>
 </section>

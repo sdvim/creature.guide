@@ -18,11 +18,13 @@
   {
     "title": "The Creature Olympics",
     "date": "Thursday November 4th",
-    "body": "The playground comes to life."
+    "body": "The playground comes to life.",
+    "future": true
   },
   {
     "title": "The Second Journey",
     "date": "November",
-    "body": "The Creature finds its voice."
+    "body": "The Creature finds its voice.",
+    "future": true
   }
 ]
