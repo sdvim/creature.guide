@@ -245,13 +245,13 @@ section {
   }
 }
 
-// @import 'header';
+@import 'header';
 @import 'hero';
 // @import 'timeline';
 // @import 'team';
 // @import 'faq';
 // @import 'press';
-// @import 'rainbow';
+@import 'rainbow';
 // @import 'footer';
 
 @media only screen and (max-width: 768px) {

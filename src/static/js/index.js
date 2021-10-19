@@ -133,10 +133,7 @@ document.addEventListener("scroll", function (e) {
       const index = Math.min(100, Math.max(0, Math.round(scrollPercent * 100)));
       const { x, y } = scales[index];
       document.querySelector("#rainbow").style.transform = `scale(${x}, ${y})`;
-      if (window.innerWidth <= 600)
-        document.querySelector("#rainbow").style.opacity = Math.min(1, x * 2);
-      else if (document.querySelector("#rainbow").style.opacity != 1)
-        document.querySelector("#rainbow").style.opacity = 1;
+      document.querySelector("#rainbow").style.opacity = Math.min(1, x * 2);
       ticking = false;
     });
     ticking = true;
