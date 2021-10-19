@@ -16,70 +16,71 @@ layout: base
   </div>
   <div class="splash__content">
     <h1 class="splash__title">Creature World</h1>
-    <p class="splash__welcome">Welcome to the Creature World. You have arrived in a nearby magical dimension of love, divine intervention, and possibility.</p>
+    <h2>Welcome to the Creature World. You have arrived in a nearby magical dimension of love, divine intervention, and possibility.</p>
     <nav class="splash__links">
-    {% for link in links %}
+    {# {% for link in links %}
       <a class="splash__link splash__link--{{ link.title | lower }}" href="{{ link.url }}" target="_blank">
         <img class="splash__link__icon" alt="{{ link.title }}" src="/img/{{ link.title | lower }}.svg" />
       </a>
-    {% endfor %}
+    {% endfor %} #}
     </nav>
   </div>
 </section>
 
-<section class="timeline">
-  <h2 class="timeline__title">Journey Thus Far</h2>
+<section>
+  <h2>Journey Thus Far</h2>
+  <div class="timeline grid">
   {% for event in timeline %}
-  <div class="event">
-    <div class="event__marker"></div>
-    <div class="event__line"></div>
-    <h3 class="event__title">{{ event.title }}</h3>
-    <h5 class="event__time">{{ event.date }}</h5>
-    <p class="event__body">{{ event.body | striptags(true) | replace('{', '<a href="' + event.linkUrl + '" target="_blank">') | replace('}', '</a>') | nl2br | safe }}</p>
-  </div>
+    <div class="timeline__event">
+      <h3>{{ event.title }}</h3>
+      <h4>{{ event.date }}</h4>
+      <p>{{ event.body | striptags(true) | replace('{', '<a href="' + event.linkUrl + '" target="_blank">') | replace('}', '</a>') | nl2br | safe }}</p>
+    </div>
   {% endfor %}
+  </div>
 </section>
 
-<section class="faq">
-  <h2 class="faq__title">FAQ</h2>
+<section>
+  <h2>FAQ</h2>
+  <div class="faq">
   {% for qa in faq %}
-  <div class="qa">
     <h3>{{ qa.question }}</h3>
     <p>{{ qa.answer }}</p>
-  </div>
   {% endfor %}
+  </div>
 </section>
 
-<section class="team">
-  <h2 class="team__title">The Team</h2>
-  <div class="team__container">
-    {% for teammate in team %}
-    <div class="teammate">
-      <div class="teammate__avatar">
-        <img class="teammate__avatar__image" src="/img/{{ teammate.creature }}.jpg" />
-        <div class="teammate__avatar__eyes" style="background-image: url('/img/{{ teammate.creature }}-eyes.jpg')"></div>
-      </div>
-      <div class="teammate__info">
-        <h3 class="teammate__name">{{ teammate.name }}</h3>
-        <h5 class="teammate__role">{{ teammate.role }}</h5>
-        <p>
-          <a class="teammate__twitter" href="//twitter.com/{{ teammate.twitter }}" target="_blank">@{{ teammate.twitter }}</a>
-        </p>
-      </div>
+<section>
+  <h2>The Team</h2>
+  <div class="team grid">
+  {% for teammate in team %}
+    <div class="team__avatar">
+      <img class="team__avatar__image" src="/img/{{ teammate.creature }}.jpg" />
+      <div class="team__avatar__eyes" style="background-image: url('/img/{{ teammate.creature }}-eyes.jpg')"></div>
     </div>
-    {% endfor %}
+    <div class="team__info">
+      <h3>{{ teammate.name }}</h3>
+      <h4>{{ teammate.role }}</h4>
+      <p>
+        <a href="//twitter.com/{{ teammate.twitter }}" target="_blank">@{{ teammate.twitter }}</a>
+      </p>
+    </div>
+  {% endfor %}
   </div>
 </section>
 
-<section class="press">
-  <h2 class="press__title">Press</h2>
-  <div class="press__items">
-    {% for link in press %}
-    <p class="press__item"><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></p>
-    {% endfor %}
+<section>
+  <h2>Press</h2>
+  <div class="press">
+  {% for link in press %}
+    <blockquote cite="{{ link.url }}">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae neque at odio ornare suscipit. Phasellus placerat pretium dui in ornare. Aenean in magna vitae enim accumsan mattis.</p>
+      <span>&mdash; <a href="{{ link.url }}" target="_blank">{{ link.name }}</a></span>
+    </blockquote>
+  {% endfor %}
   </div>
 </section>
 
-<section class="footer">
-  <h2 class="footer__title">Enjoy your stay.</h2>
+<section>
+  <h2>Enjoy your stay.</h2>
 </section>
