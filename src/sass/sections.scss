@@ -138,6 +138,12 @@ section {
   }
 }
 
+@media only screen and (max-width: 540px) {
+  .team__avatar__eyes {
+    animation-play-state: running;
+  }
+}
+
 @keyframes blinking {
   0%, 20% { visibility: visible; }
   10%, 40%, 100% { visibility: hidden; }
