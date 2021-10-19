@@ -22,7 +22,7 @@ html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 *,
@@ -155,7 +155,10 @@ p {
 
 @media only screen and (max-width: 768px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
+  }
+  section {
+    padding: 2rem 1rem;
   }
   .white-box {
     border-left: none;
@@ -166,6 +169,6 @@ p {
 
 @media only screen and (max-width: 540px) {
   html {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
