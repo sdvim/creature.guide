@@ -58,7 +58,7 @@ layout: base
   {% for teammate in team %}
     <div class="team__avatar">
       <img class="team__avatar__image" src="/img/{{ teammate.creature }}.jpg" />
-      <div class="team__avatar__eyes" style="background-image: url('/img/{{ teammate.creature }}-eyes.jpg')"></div>
+      <img class="team__avatar__eyes" src="/img/{{ teammate.creature }}-eyes.jpg">
     </div>
     <div class="team__info">
       <h3>{{ teammate.name }}</h3>

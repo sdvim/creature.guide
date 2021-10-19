@@ -75,20 +75,23 @@ section {
     position: relative;
     border-radius: 50%;
     overflow: hidden;
-    &__image {
-      border-radius: 50%;
+    &::before {
+      content: '';
+      display: block;
+      height: 0;
+      width: 0;
+      padding-bottom: 100%;
+    }
+    &__image,
+    &__eyes {
       display: block;
       width: 100%;
-    }
-    &__eyes {
-      width: inherit;
-      height: inherit;
+      height: auto;
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
+    }
+    &__eyes {
       visibility: hidden;
       pointer-events: none;
       animation: blinking steps(3, start) infinite 4s;
