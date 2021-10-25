@@ -7,23 +7,36 @@
   },
   {
     "title": "The First Journey",
-    "date": "Saturday August 28th",
+    "date": "Saturday, August 28th",
     "body": "10,000 digital Creature artworks were released into the world and claimed within 13 minutes. Each artwork is a unique portrait of a Creature, and serves as a ticket to participate in digital and life Creature World experiences we call “Journeys.”"
   },
   {
     "title": "The Playground",
-    "date": "Thursday September 23rd",
-    "body": "The Creature Playground was the first official Creature World airdrop. Each holder received 1 out of 7 pieces of the Creature Playground. The mission was to get all 7 pieces in the same wallet by any means necessary. Most holders decided to form teams and contribute their piece to a group.\n\nThose who completed this task were able to transfer those 7 individual pieces for 7 editions of the final playground. The final playground served as an access token to acquire a physical version of the Creature Playground."
+    "date": "Thursday, September 23rd",
+    "body": "The Creature Playground was the first official Creature World airdrop. Holders were prompted to work together. Those who completed the challenge received a complete playground NFT and the ability to claim a physical at {creature.exchange}.",
+    "linkUrl": "//creature.exchange"
+  },
+  {
+    "title": "A F$*KING WEEKEND: Live From The Creature World",
+    "date": "Saturday, October 30th",
+    "body": "Junior Varsity, AG Club and friends perform at a massive warehouse in NYC, converted into a scene from the Creature World.",
+    "future": true
   },
   {
     "title": "The Creature Olympics",
-    "date": "Thursday November 4th",
+    "date": "Thursday, November 4th",
     "body": "The playground comes to life.",
     "future": true
   },
   {
+    "title": "Meet the Creature",
+    "date": "Saturday, November 6th",
+    "body": "Meet the Creature in its home. See the clothes it wears and buy some of your own. Creature World x Advisry, ComplexCon 2021.",
+    "future": true
+  },
+  {
     "title": "The Second Journey",
-    "date": "November",
+    "date": "???",
     "body": "The Creature finds its voice.",
     "future": true
   }
