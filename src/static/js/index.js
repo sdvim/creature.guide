@@ -24,13 +24,12 @@ const planets = {
   uuary: null,
   inciu: null,
 };
+const creatures = {
+  blue: null,
+};
 let isDarkModeOn;
 
 window.addEventListener("load", function () {
-  const script = document.createElement("script");
-  script.src = "/lib/miniature.earth.js";
-  document.body.appendChild(script);
-
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
   if (prefersDarkScheme.matches) {
     document.body.classList.add("dark-theme");
@@ -97,6 +96,37 @@ window.addEventListener("earthjsload", function () {
     image: planetImages.inciu,
     visible: isDarkModeOn,
   });
+
+  creatures.blue = miniEarth.addMarker({
+    mesh : "",
+    location: { lat: 90, lng: 0 },
+    scale: 0.25,
+    offset: 1
+  });
+  // creatures.blue.animate(
+  //   "location",
+  //   { lat: -45, lng: 0 },
+  //   { duration: 0, relativeDuration: 200, easing: "linear", loop: true, complete: function() {
+
+  //   } }
+  // );
+
+  setInterval(function() {
+    const location = { lat: randomInt(-90, 90), lng: (-180, 180) };
+    creatures.blue.animate("lookAt", location, { duration: 0, relativeDuration: 100, complete: function() {
+      this.animate("location", location, { duration: 0, relativeDuration: 200 });
+    }});
+  }, 2000);
+
+  loadObjFile(
+    "../3d/",
+    "laying.obj",
+    "laying.mtl",
+    function (obj) {
+      creatures.blue.object3d.add(obj);
+    }
+  );
+
 
   const starPoints = [];
   for (let i = 0; i < 1000; i++) {
