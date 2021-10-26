@@ -6,6 +6,7 @@
   --yellow: #F5B402;
   --blue: #5C7F93;
   --sky-blue: #7aa1be;
+  --star-yellow: #bab479;
   --midnight: #171e28;
   --ocean: #1e4497;
   --earth: #819647;
@@ -53,7 +54,7 @@ body {
   &.dark-theme {
     --background-color: var(--midnight);
     --foreground-color: var(--white);
-    --secondary-color: var(--light-brown);
+    --secondary-color: var(--star-yellow);
     --link-color: var(--yellow);
   }
 }
@@ -62,7 +63,7 @@ body {
   body {
     --background-color: var(--midnight);
     --foreground-color: var(--white);
-    --secondary-color: var(--light-brown);
+    --secondary-color: var(--star-yellow);
     --link-color: var(--yellow);
     &.light-theme {
       --background-color: var(--beige);
