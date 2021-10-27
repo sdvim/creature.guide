@@ -25,7 +25,10 @@ const planets = {
   inciu: null,
 };
 const creatures = {
-  blue: null,
+  laying: null,
+  sitting: null,
+  standingA: null,
+  standingB: null,
 };
 let currentTheme = localStorage.getItem("theme");
 let isDarkModeOn;
@@ -102,36 +105,27 @@ window.addEventListener("earthjsload", function () {
     visible: isDarkModeOn,
   });
 
-  creatures.blue = miniEarth.addMarker({
-    mesh : "",
-    location: { lat: 90, lng: 0 },
-    scale: 0.25,
-    offset: 1
+  Object.keys(creatures).forEach((pose, index) => {
+    creatures[pose] = miniEarth.addMarker({
+      mesh : "",
+      location: { lat: 30 + (index * 30), lng: index * 30 },
+      scale: 0.05,
+      offset: 1
+    });
+    creatures[pose].animate(
+      "offset",
+      1.1,
+      { duration: 0, relativeDuration: 10000, loop: true, oscillate: true },
+    );
+    loadObjFile(
+      "../3d/",
+      `${pose}.obj`,
+      `${pose}.mtl`,
+      function (obj) {
+        creatures[pose].object3d.add(obj);
+      }
+    );  
   });
-  // creatures.blue.animate(
-  //   "location",
-  //   { lat: -45, lng: 0 },
-  //   { duration: 0, relativeDuration: 200, easing: "linear", loop: true, complete: function() {
-
-  //   } }
-  // );
-
-  // setInterval(function() {
-  //   const location = { lat: randomInt(-90, 90), lng: (-180, 180) };
-  //   creatures.blue.animate("lookAt", location, { duration: 0, relativeDuration: 100, complete: function() {
-  //     this.animate("location", location, { duration: 0, relativeDuration: 200 });
-  //   }});
-  // }, 2000);
-
-  loadObjFile(
-    "../3d/",
-    "laying.obj",
-    "laying.mtl",
-    function (obj) {
-      creatures.blue.object3d.add(obj);
-    }
-  );
-
 
   const starPoints = [];
   for (let i = 0; i < 1000; i++) {
