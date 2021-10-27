@@ -74,35 +74,6 @@ body {
   }
 }
 
-// p a {
-//   color: var(--link-color);
-//   text-decoration: none;
-//   position: relative;
-//   white-space: nowrap;
-//   &::after {
-//     content: '';
-//     background: currentColor;
-//     display: block;
-//     width: 100%;
-//     height: 2px;
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//   }
-//   &:hover {
-//     color: var(--red);
-//     &::after {
-//       background: linear-gradient(to left,
-//         var(--blue) 0%, var(--blue) 25%,
-//         var(--yellow) 25%, var(--yellow) 50%,
-//         var(--orange) 50%, var(--orange) 75%,
-//         var(--red) 75%, var(--red) 100%
-//       ) repeat-x;
-//       background-size: 2rem;
-//     }
-//   }
-// }
-
 blockquote,
 p,
 h1,
@@ -138,6 +109,45 @@ h4 {
 
 p {
   margin-top: 1rem;
+}
+
+blockquote a,
+p a {
+  color: currentColor;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+  &::after {
+    content: '';
+    background: currentColor;
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+  }
+  &:hover {
+    &::after {
+      background: linear-gradient(to left,
+        var(--blue) 0%, var(--blue) 25%,
+        var(--yellow) 25%, var(--yellow) 50%,
+        var(--orange) 50%, var(--orange) 75%,
+        var(--red) 75%, var(--red) 100%
+      ) repeat-x;
+      background-size: 2rem;
+      animation: shifting-gradient 0.5s infinite steps(8);
+    }
+  }
+}
+
+@keyframes shifting-gradient {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -4rem;
+  }
 }
 
 .splash {
