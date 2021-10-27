@@ -31,7 +31,7 @@ const creatures = {
   standingAlt: null,
 };
 let currentTheme = localStorage.getItem("theme");
-let isDarkModeOn;
+let isDarkModeOn = currentTheme === undefined || currentTheme === "dark-theme";
 
 const toggleTheme = function(e) {
   if (e) e.preventDefault;
