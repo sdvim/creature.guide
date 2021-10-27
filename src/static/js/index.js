@@ -49,14 +49,7 @@ const toggleTheme = function(e) {
 }
 
 window.addEventListener("load", function () {
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  document.body.classList.add(
-    currentTheme !== null
-      ? currentTheme
-      : prefersDarkScheme
-        ? "dark-theme"
-        : "light-theme"
-  );
+  document.body.classList.add(currentTheme !== null ? currentTheme : "dark-theme");
   isDarkModeOn = document.body.classList.contains("dark-theme");
 
   const toggleBtn = document.querySelector(".header__theme-toggle");
