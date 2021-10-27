@@ -3,14 +3,14 @@
   text-shadow: 0 0 10px #1e4497;
   background: linear-gradient(var(--background-color) 50%, transparent 50%);
   &__title {
-    font-size: 2rem;
+    font-size: calc(2rem + 3vh);
     line-height: 1;
     margin: 0;
   }
   &__welcome {
-    font-size: 1rem;
+    font-size: calc(1rem + 1vh);
     font-weight: 300;
-    margin: 1rem 0;
+    margin: 1em 0;
   }
   &__links {
     display: flex;

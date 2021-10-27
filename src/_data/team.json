@@ -1,26 +1,26 @@
 [
   {
-    "name": "danny cole",
+    "name": "Danny",
     "twitter": "dannycoleee",
-    "role": "Artist | Spaceman",
+    "role": "Artist | Co-Founder",
     "creature": 8831
   },
   {
-    "name": "Kev",
+    "name": "Jake",
+    "twitter": "KidHastings",
+    "role": "Operations | Co-Founder",
+    "creature": 4392
+  },
+  {
+    "name": "Kevin",
     "twitter": "PhatStraws",
-    "role": "Dev | Co-Founder",
+    "role": "Developer | Co-Founder",
     "creature": 7234
   },
   {
     "name": "Jacob",
     "twitter": "remixrfi",
-    "role": "Co-Founder",
+    "role": "Operations | Co-Founder",
     "creature": 9667
-  },
-  {
-    "name": "jake",
-    "twitter": "KidHastings",
-    "role": "Co-Founder",
-    "creature": 4392
   }
 ]

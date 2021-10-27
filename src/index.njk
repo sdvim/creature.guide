@@ -74,9 +74,9 @@ layout: base
 <section class="white-box">
   <h2>Press</h2>
   <div class="press">
-  {% for link in press %}
+  {% for link in press | reverse %}
     <blockquote cite="{{ link.url }}">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae neque at odio ornare suscipit. Phasellus placerat pretium dui in ornare. Aenean in magna vitae enim accumsan mattis.</p>
+      <p>{{ link.snippet }}</p>
       <span>&mdash; <a href="{{ link.url }}" target="_blank">{{ link.name }}</a></span>
     </blockquote>
   {% endfor %}

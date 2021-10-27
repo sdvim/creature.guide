@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,700;1,400&display=swap');
 
 :root {
   --red: #B64832;
@@ -6,6 +6,7 @@
   --yellow: #F5B402;
   --blue: #5C7F93;
   --sky-blue: #7aa1be;
+  --star-yellow: #bab479;
   --midnight: #171e28;
   --ocean: #1e4497;
   --earth: #819647;
@@ -53,7 +54,7 @@ body {
   &.dark-theme {
     --background-color: var(--midnight);
     --foreground-color: var(--white);
-    --secondary-color: var(--light-brown);
+    --secondary-color: var(--star-yellow);
     --link-color: var(--yellow);
   }
 }
@@ -62,7 +63,7 @@ body {
   body {
     --background-color: var(--midnight);
     --foreground-color: var(--white);
-    --secondary-color: var(--light-brown);
+    --secondary-color: var(--star-yellow);
     --link-color: var(--yellow);
     &.light-theme {
       --background-color: var(--beige);
@@ -72,35 +73,6 @@ body {
     }
   }
 }
-
-// p a {
-//   color: var(--link-color);
-//   text-decoration: none;
-//   position: relative;
-//   white-space: nowrap;
-//   &::after {
-//     content: '';
-//     background: currentColor;
-//     display: block;
-//     width: 100%;
-//     height: 2px;
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//   }
-//   &:hover {
-//     color: var(--red);
-//     &::after {
-//       background: linear-gradient(to left,
-//         var(--blue) 0%, var(--blue) 25%,
-//         var(--yellow) 25%, var(--yellow) 50%,
-//         var(--orange) 50%, var(--orange) 75%,
-//         var(--red) 75%, var(--red) 100%
-//       ) repeat-x;
-//       background-size: 2rem;
-//     }
-//   }
-// }
 
 blockquote,
 p,
@@ -130,11 +102,52 @@ h3 {
 
 h4 {
   font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: 1rem;
 }
 
 p {
   margin-top: 1rem;
+}
+
+blockquote a,
+p a {
+  color: currentColor;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+  &::after {
+    content: '';
+    background: currentColor;
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+  }
+  &:hover {
+    &::after {
+      background: linear-gradient(to left,
+        var(--blue) 0%, var(--blue) 25%,
+        var(--yellow) 25%, var(--yellow) 50%,
+        var(--orange) 50%, var(--orange) 75%,
+        var(--red) 75%, var(--red) 100%
+      ) repeat-x;
+      background-size: 2rem;
+      animation: shifting-gradient 0.5s infinite steps(8);
+    }
+  }
+}
+
+@keyframes shifting-gradient {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -4rem;
+  }
 }
 
 .splash {

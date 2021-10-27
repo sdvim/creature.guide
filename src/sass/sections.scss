@@ -13,7 +13,7 @@ section {
 
 .white-box {
   background: var(--white);
-  border: 6px solid var(--secondary-color);
+  border: 6px solid var(--brown);
   color: var(--brown);
   border-radius: 1rem;
 }
@@ -64,7 +64,10 @@ section {
 
 .faq {
   p {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -124,7 +127,7 @@ section {
     margin-bottom: 0;
   }
   h4 {
-    margin-bottom: 0;
+    margin: 0.25rem 0;
   }
   p {
     margin-top: 0;

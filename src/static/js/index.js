@@ -27,32 +27,41 @@ const planets = {
 const creatures = {
   blue: null,
 };
+let currentTheme = localStorage.getItem("theme");
 let isDarkModeOn;
 
+const toggleTheme = function(e) {
+  if (e) e.preventDefault;
+  isDarkModeOn = document.body.classList.contains("dark-theme");
+  const toggleDarkMode = !isDarkModeOn;
+  const newTheme = toggleDarkMode ? "dark-theme" : "light-theme";
+  const oldTheme = toggleDarkMode ? "light-theme" : "dark-theme";
+  document.body.classList.add(newTheme);
+  document.body.classList.remove(oldTheme);
+  localStorage.setItem("theme", newTheme);
+
+  Object.values(planets).map((planet) => {
+    planet.visible = toggleDarkMode;
+  });
+}
+
 window.addEventListener("load", function () {
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  if (prefersDarkScheme.matches) {
-    document.body.classList.add("dark-theme");
-  } else {
-    document.body.classList.add("light-theme");
-    document.body.classList.remove("dark-theme");
-  }
+  const script = document.createElement("script");
+  script.src = "/lib/miniature.earth.js";
+  document.body.appendChild(script);
+
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.body.classList.add(
+    currentTheme !== null
+      ? currentTheme
+      : prefersDarkScheme
+        ? "dark-theme"
+        : "light-theme"
+  );
   isDarkModeOn = document.body.classList.contains("dark-theme");
 
-  document
-    .querySelector(".header__theme-toggle")
-    .addEventListener("click", function (e) {
-      e.preventDefault;
-      isDarkModeOn = document.body.classList.contains("dark-theme");
-      document.body.classList.add(isDarkModeOn ? "light-theme" : "dark-theme");
-      document.body.classList.remove(
-        !isDarkModeOn ? "light-theme" : "dark-theme"
-      );
-
-      Object.values(planets).map((planet) => {
-        planet.visible = !isDarkModeOn;
-      });
-    });
+  const toggleBtn = document.querySelector(".header__theme-toggle");
+  toggleBtn.addEventListener("click", toggleTheme);
 });
 
 window.addEventListener("earthjsload", function () {
