@@ -120,12 +120,12 @@ window.addEventListener("earthjsload", function () {
   //   } }
   // );
 
-  setInterval(function() {
-    const location = { lat: randomInt(-90, 90), lng: (-180, 180) };
-    creatures.blue.animate("lookAt", location, { duration: 0, relativeDuration: 100, complete: function() {
-      this.animate("location", location, { duration: 0, relativeDuration: 200 });
-    }});
-  }, 2000);
+  // setInterval(function() {
+  //   const location = { lat: randomInt(-90, 90), lng: (-180, 180) };
+  //   creatures.blue.animate("lookAt", location, { duration: 0, relativeDuration: 100, complete: function() {
+  //     this.animate("location", location, { duration: 0, relativeDuration: 200 });
+  //   }});
+  // }, 2000);
 
   loadObjFile(
     "../3d/",

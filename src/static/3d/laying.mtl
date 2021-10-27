@@ -1,4 +1,15 @@
-# Material Count: 1
+# Blender MTL File: 'DCLC_Pose_03 - Laying on Clouds.blend'
+# Material Count: 2
+
+newmtl Clouds
+Ns 75.216210
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.106260 0.106260 0.106260
+Ni 1.450000
+d 1.000000
+illum 1
 
 newmtl creature.mat
 Ns 225.000000
@@ -9,5 +20,5 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd blue.png
-map_Ke blue.png
+map_Kd CreatureWorld_UVmap_CreatureBlue.png
+map_Ke CreatureWorld_UVmap_CreatureBlue.png
