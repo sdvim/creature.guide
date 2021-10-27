@@ -1,6 +1,6 @@
 # www.blender.org
 mtllib material.mtl
-o creature_Mesh
+o CreatureSitting
 v 1.315339 -0.133438 2.591724
 v 0.789009 0.082599 2.599067
 v 1.163808 -0.063213 2.561862

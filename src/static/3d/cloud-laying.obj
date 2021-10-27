@@ -1,6 +1,6 @@
 # www.blender.org
 mtllib material.mtl
-o Clouds_1_Vert
+o CloudLaying
 v 2.467200 -1.644195 -5.864023
 v 2.467200 -1.644195 -5.737023
 v 1.896343 -1.531766 -7.335082

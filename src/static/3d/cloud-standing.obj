@@ -1,6 +1,6 @@
 # www.blender.org
 mtllib material.mtl
-o Clouds_3_Vert.004
+o CloudStanding
 v -1.389486 -5.832311 -6.306427
 v -1.445199 -5.492104 -6.320999
 v -8.145533 -5.155202 -4.958653
