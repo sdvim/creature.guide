@@ -46,10 +46,6 @@ const toggleTheme = function(e) {
 }
 
 window.addEventListener("load", function () {
-  const script = document.createElement("script");
-  script.src = "/lib/miniature.earth.js";
-  document.body.appendChild(script);
-
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
   document.body.classList.add(
     currentTheme !== null
