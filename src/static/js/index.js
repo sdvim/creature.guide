@@ -27,8 +27,8 @@ const planets = {
 const creatures = {
   laying: null,
   sitting: null,
-  standingA: null,
-  standingB: null,
+  standing: null,
+  standingAlt: null,
 };
 let currentTheme = localStorage.getItem("theme");
 let isDarkModeOn;
@@ -62,7 +62,7 @@ window.addEventListener("earthjsload", function () {
     light: "none",
     mapSeaColor: "#1e4497",
     mapLandColor: "#819647",
-    mapStyles: "#AQ { fill: #f0e4d8; stroke: #ffffff; }",
+    mapStyles: "#AQ { fill: #f0e4d8; }",
     autoRotate: true,
     autoRotateDelay: 0,
     autoRotateStart: 0,
@@ -102,18 +102,18 @@ window.addEventListener("earthjsload", function () {
     creatures[pose] = miniEarth.addMarker({
       mesh : "",
       location: { lat: 30 + (index * 30), lng: index * 30 },
-      scale: 0.05,
-      offset: 1
+      scale: 1,
+      offset: 0
     });
-    creatures[pose].animate(
-      "offset",
-      1.1,
-      { duration: 0, relativeDuration: 10000, loop: true, oscillate: true },
-    );
+    // creatures[pose].animate(
+    //   "offset",
+    //   1.1,
+    //   { duration: 0, relativeDuration: 10000, loop: true, oscillate: true },
+    // );
     loadObjFile(
       "../3d/",
-      `${pose}.obj`,
-      `${pose}.mtl`,
+      `creature-${pose}.obj`,
+      `material.mtl`,
       function (obj) {
         creatures[pose].object3d.add(obj);
       }
