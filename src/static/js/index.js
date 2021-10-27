@@ -62,6 +62,7 @@ window.addEventListener("earthjsload", function () {
     light: "none",
     mapSeaColor: "#1e4497",
     mapLandColor: "#819647",
+    mapBorderWidth: 0,
     mapStyles: "#AQ { fill: #f0e4d8; }",
     autoRotate: true,
     autoRotateDelay: 0,
