@@ -99,27 +99,51 @@ window.addEventListener("earthjsload", function () {
     visible: isDarkModeOn,
   });
 
-  Object.keys(creatures).forEach((pose, index) => {
-    creatures[pose] = miniEarth.addMarker({
-      mesh : "",
-      location: { lat: 30 + (index * 30), lng: index * 30 },
-      scale: 1,
-      offset: 0
-    });
-    // creatures[pose].animate(
-    //   "offset",
-    //   1.1,
-    //   { duration: 0, relativeDuration: 10000, loop: true, oscillate: true },
-    // );
-    loadObjFile(
-      "../3d/",
-      `creature-${pose}.obj`,
-      `material.mtl`,
-      function (obj) {
-        creatures[pose].object3d.add(obj);
-      }
-    );  
+  ["laying", "sitting", "standing"].forEach(async (pose) => {
+    const response = await fetch(`../3d/cloud-${pose}.obj`)
+      .then(response => response.blob())
+      .then(blob => blob.text())
+      .then(mesh => {
+        Earth.addMesh(mesh);
+        for (let i = 0; i < 8; i++) {
+          let cloud = miniEarth.addMarker({
+            mesh: "Cloud" + pose.slice(0,1).toUpperCase() + pose.slice(1),
+            location: { lat: randomInt(-70, 70), lng: randomInt(-170, 170) },
+            rotationY: randomInt(-60, 60),
+            color: '#fff',
+            scale: 0.05,
+            offset: 1,
+          });
+          cloud.animate(
+            "offset",
+            1.1,
+            { duration: 0, relativeDuration: 6000 + (i * 1000), loop: true, oscillate: true },
+          )
+        }
+      });
   });
+
+  // Object.keys(creatures).forEach((pose, index) => {
+  //   creatures[pose] = miniEarth.addMarker({
+  //     mesh : "",
+  //     location: { lat: 30 + (index * 30), lng: index * 30 },
+  //     scale: 1,
+  //     offset: 0
+  //   });
+  //   // creatures[pose].animate(
+  //   //   "offset",
+  //   //   1.1,
+  //   //   { duration: 0, relativeDuration: 10000, loop: true, oscillate: true },
+  //   // );
+  //   loadObjFile(
+  //     "../3d/",
+  //     `creature-${pose}.obj`,
+  //     `material.mtl`,
+  //     function (obj) {
+  //       creatures[pose].object3d.add(obj);
+  //     }
+  //   );  
+  // });
 
   const starPoints = [];
   for (let i = 0; i < 1000; i++) {
