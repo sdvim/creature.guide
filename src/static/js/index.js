@@ -109,12 +109,13 @@ window.addEventListener("earthjsload", function () {
       .then(mesh => {
         Earth.addMesh(mesh);
         for (let i = 0; i < maxCloudsPerPose; i++) {
+          const targetScale = Math.max(0.08, Math.random() * 0.15);
           let cloud = miniEarth.addMarker({
             mesh: "Cloud" + pose.slice(0,1).toUpperCase() + pose.slice(1),
             location: { lat: randomInt(-70, 70), lng: randomInt(-170, 170) },
             rotationY: randomInt(-60, 60),
             color: '#fff',
-            scale: 0.075,
+            scale: 0,
             offset: 1,
             opacity: 0.95,
           });
@@ -122,21 +123,36 @@ window.addEventListener("earthjsload", function () {
             "offset",
             1.1,
             { duration: 0, relativeDuration: 6000 + (i * 1000), loop: true, oscillate: true },
-          )
+          );
+          setTimeout(() => loadObjFile(
+            "../3d/",
+            `creature-${pose}.obj`,
+            `material.mtl`,
+            mesh => {
+              cloud.object3d.add(mesh);
+              cloud.animate("scale", targetScale, { duration: 300 });
+            }
+          ), 100 + (i * 400));
           clouds.push(cloud);
         }
       });
   });
 
-  Object.keys(creatures).forEach((pose, index) => {
-    loadObjFile(
-      "../3d/",
-      `creature-${pose}.obj`,
-      `material.mtl`,
-      function (obj) {
-        clouds[index * maxCloudsPerPose].object3d.add(obj);
-      }
-    );  
+  let ticking = false;
+  miniEarth.addEventListener("update", function() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        clouds.forEach((cloud, index) => {
+          let {lat, lng} = cloud.location;
+          lat += 0.03 + (cloud.rotationY / 500);
+          lng += 0.1 - 0.05 * cloud.scale;
+          cloud.location = { lat, lng };
+          cloud.lookAt = { lat, lng };
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 
   const starPoints = [];
