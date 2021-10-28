@@ -82,6 +82,9 @@
   .hero {
     color: unset;
     text-shadow: unset;
+    &.splash {
+      padding: 0;
+    }
     &__earth-container {
       position: unset;
       margin: unset;
