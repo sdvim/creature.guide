@@ -157,7 +157,7 @@ window.addEventListener("earthjsload", function () {
   }
   planets.stars = miniEarth.addPoints({
     points: starPoints,
-    scale: 0.5 + window.innerWidth / 1000,
+    scale: 0.25 + window.innerHeight / 1000,
     visible: isDarkModeOn,
   });
 });
