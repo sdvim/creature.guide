@@ -73,7 +73,10 @@
     height: 100%;
     overflow: hidden;
     #earth {
+      --poster-color: #000;
+      width: inherit;
       height: inherit;
+      outline: none;
     }
   }
 }
