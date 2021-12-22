@@ -1,3 +1,5 @@
+import * as THREE from "../../../node_modules/three";
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import planetImages from "./planetImages.js";
 import * as Util from "./functions.js";
 
@@ -87,7 +89,40 @@ import * as Util from "./functions.js";
       });
     }
 
+    const loader = new GLTFLoader();
+    loader.load(
+      "../3d/CreatureWeb_Creature_WalkAndSwim.glb",
+      // called when the resource is loaded
+      function (gltf) {
+        // miniEarth.scene.add(gltf.scene);
+        // scene.add( gltf.scene );
+        // gltf.animations; // Array<THREE.AnimationClip>
+        // gltf.scene; // THREE.Group
+        // gltf.scenes; // Array<THREE.Group>
+        // gltf.cameras; // Array<THREE.Camera>
+        // gltf.asset; // Object
+        console.log(miniEarth);
+        let object3d = gltf.scene.children[0];
+        let marker = miniEarth.addMarker({
+          mesh : "",
+          location: { lat: Util.randomInt(-70, 70), lng: Util.randomInt(-170, 170) },
+        });
+        console.log(object3d);
+        // marker.object3d.add(object3d);
+    
+      },
+      // called while loading is progressing
+      function ( xhr ) {
+        console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+      },
+      // called when loading has errors
+      function ( error ) {
+        console.log( 'An error happened' );
+      }
+    );
+
     // Add clouds and creature models
+    /*
     creaturePoses.forEach(async (pose) => {
       const cloudName = pose.substr(0, 8);
       await fetch(`../3d/cloud-${cloudName}.obj`)
@@ -120,6 +155,7 @@ import * as Util from "./functions.js";
           }
         });
     });
+    */
 
     // Add stars
     for (let i = 0; i < 1000; i++) {
