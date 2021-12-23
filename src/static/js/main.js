@@ -74,14 +74,15 @@ import * as Util from "./functions.js";
   const controls = new OrbitControls( camera, renderer.domElement );
 
   const starTexture = new THREE.TextureLoader().load("/3d/stars.png");
-  starTexture.wrapS = THREE.RepeatWrapping;
-  starTexture.wrapT = THREE.RepeatWrapping;
-  starTexture.repeat.set( 6, 6 );
+  // starTexture.wrapS = THREE.RepeatWrapping;
+  // starTexture.wrapT = THREE.RepeatWrapping;
+  // starTexture.repeat.set(8, 8);
 
   var starGeometry = new THREE.SphereGeometry(1000, 50, 50);
   var starMaterial = new THREE.MeshPhongMaterial({
     map: starTexture,
     side: THREE.DoubleSide,
+    opacity: 0.01,
     shininess: 0
   });
   var starField = new THREE.Mesh(starGeometry, starMaterial);
