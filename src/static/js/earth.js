@@ -87,19 +87,19 @@ export default () => {
   });
   sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
-  starTexture = new THREE.TextureLoader().load("/3d/stars.png");
-  starTexture.wrapS = THREE.RepeatWrapping;
-  starTexture.wrapT = THREE.RepeatWrapping;
-  starTexture.repeat.set(8, 8);
+  // starTexture = new THREE.TextureLoader().load("/3d/stars.png");
+  // starTexture.wrapS = THREE.RepeatWrapping;
+  // starTexture.wrapT = THREE.RepeatWrapping;
+  // starTexture.repeat.set(8, 8);
 
-  starGeometry = new THREE.SphereGeometry(1000, 50, 50);
-  starMaterial = new THREE.MeshPhongMaterial({
-    map: starTexture,
-    side: THREE.DoubleSide,
-    opacity: 0.01,
-    shininess: 0
-  });
-  starField = new THREE.Mesh(starGeometry, starMaterial);
+  // starGeometry = new THREE.SphereGeometry(1000, 50, 50);
+  // starMaterial = new THREE.MeshPhongMaterial({
+  //   map: starTexture,
+  //   side: THREE.DoubleSide,
+  //   opacity: 0.01,
+  //   shininess: 0
+  // });
+  // starField = new THREE.Mesh(starGeometry, starMaterial);
 
 
   group = new THREE.Group();
