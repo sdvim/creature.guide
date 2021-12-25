@@ -56,6 +56,8 @@ const swimmers = [
 export default () => {
   let scene, camera, renderer, controls, sphereGeometry, sphereMaterial, sphere, starTexture, starGeometry, starMaterial, starField, group, clock, loader, delta;
   const mixers = [];
+
+  const earthEl = document.querySelector('#earth');
   
   scene = new THREE.Scene();
 
@@ -75,7 +77,7 @@ export default () => {
   controls.enableZoom = false;
   controls.update();
 
-  document.querySelector('#earth').appendChild(renderer.domElement); 
+  earthEl.appendChild(renderer.domElement); 
 
   sphereGeometry = new THREE.SphereGeometry(1, 50, 50);
   sphereMaterial = new THREE.MeshPhongMaterial({
@@ -159,19 +161,20 @@ export default () => {
     controls.update();
     renderer.render(scene, camera);
   }
-  animate();
-
-
 
   function onWindowResize() {
-
-    camera.aspect = window.innerWidth / window.innerHeight;
+    const { width, height } = earthEl.getBoundingClientRect();
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
+    renderer.setSize(width, height);
     renderer.render(scene, camera);
 
+    console.log();
   }
+
+  animate();
+  onWindowResize();
+
   window.addEventListener('resize', onWindowResize);
 }
