@@ -1,5 +1,4 @@
 import Earth from "./earth.js";
-import planetImages from "./planetImages.js";
 import * as Util from "./functions.js";
 
 (() => {
