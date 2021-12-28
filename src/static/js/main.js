@@ -2,9 +2,9 @@ import Earth from "./earth.js";
 import * as Util from "./functions.js";
 
 (() => {
+  let earth;
   let currentTheme = localStorage.getItem("theme");
   let isDarkModeOn = currentTheme === undefined || currentTheme === "dark-theme";
-  let spaceObjects = {};
   let scrolling = false;
   let lastKnownScrollPosition = window.scrollY;
 
@@ -22,10 +22,7 @@ import * as Util from "./functions.js";
     document.body.classList.add(newTheme);
     document.body.classList.remove(oldTheme);
     localStorage.setItem("theme", newTheme);
-
-    Object.values(spaceObjects).map((planet) => {
-      planet.visible = toggleDarkMode;
-    });
+    earth.toggleNight(toggleDarkMode);
   };
 
   const onPageLoad = () => {
@@ -35,7 +32,8 @@ import * as Util from "./functions.js";
 
     const toggleBtn = document.querySelector(".header__theme-toggle");
     toggleBtn.addEventListener("click", onToggleTheme);
-    const earth = Earth();
+    earth = new Earth();
+    earth.toggleNight(isDarkModeOn);
   };
 
   const onPageScroll = () => {

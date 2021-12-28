@@ -3,6 +3,39 @@ import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.124/examples
 import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.124/examples/jsm/loaders/GLTFLoader.js';
 import { SkeletonUtils } from 'https://cdn.jsdelivr.net/npm/three@0.124/examples/jsm/utils/SkeletonUtils.js';
 
+const planetData = [
+  {
+    name: 'ercon',
+    x: -40,
+    y: 0,
+    z: 56,
+  },
+  {
+    name: 'gomba',
+    x: 84,
+    y: 8,
+    z: 64,
+  },
+  {
+    name: 'inciu',
+    x: 0,
+    y: -8,
+    z: 96,
+  },
+  {
+    name: 'marius',
+    x: 0,
+    y: 8,
+    z: -56,
+  },
+  {
+    name: 'uuary',
+    x: -64,
+    y: 16,
+    z: -64,
+  },
+];
+
 const walkers = [
   {
     // USA
@@ -53,10 +86,12 @@ const swimmers = [
   },
 ];
 
-export default () => {
+export default function Earth() {
   let scene, camera, renderer, controls, sphereGeometry, sphereMaterial, sphere, starTexture, starGeometry, starMaterial, starField, group, clock, loader, delta;
-  let rotationSpeed = 0;
+  let isRotating = false;
+  let isReadyToRotate = false;
   const mixers = [];
+  const planets = [];
 
   const earthEl = document.querySelector('#earth');
   
@@ -86,19 +121,19 @@ export default () => {
   });
   sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
-  // starTexture = new THREE.TextureLoader().load("/3d/stars.png");
-  // starTexture.wrapS = THREE.RepeatWrapping;
-  // starTexture.wrapT = THREE.RepeatWrapping;
-  // starTexture.repeat.set(8, 8);
+  starTexture = new THREE.TextureLoader().load("/3d/stars.png");
+  starTexture.wrapS = THREE.RepeatWrapping;
+  starTexture.wrapT = THREE.RepeatWrapping;
+  starTexture.repeat.set(8, 8);
 
-  // starGeometry = new THREE.SphereGeometry(1000, 50, 50);
-  // starMaterial = new THREE.MeshPhongMaterial({
-  //   map: starTexture,
-  //   side: THREE.DoubleSide,
-  //   opacity: 0.01,
-  //   shininess: 0
-  // });
-  // starField = new THREE.Mesh(starGeometry, starMaterial);
+  starGeometry = new THREE.SphereGeometry(1000, 50, 50);
+  starMaterial = new THREE.MeshPhongMaterial({
+    map: starTexture,
+    side: THREE.DoubleSide,
+    opacity: 0.01,
+    shininess: 0
+  });
+  starField = new THREE.Mesh(starGeometry, starMaterial);
 
 
   group = new THREE.Group();
@@ -112,8 +147,9 @@ export default () => {
       controls.autoRotate = true;
       controls.autoRotateSpeed = 0.05;
       controls.update();
-      rotationSpeed = 0.001;
       earthEl.classList.add('loaded');
+      isReadyToRotate = true;
+      isRotating = true;
 
       walkers.forEach(({x, z}) => {
         const walker = SkeletonUtils.clone(gltf.scene);
@@ -147,7 +183,16 @@ export default () => {
         group.add(walker);
       });
     },
- );
+  );
+
+  planetData.forEach(({ name, x, y, z }) => {
+    const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: new THREE.TextureLoader().load(`/img/${name}.png`)
+    }));
+    sprite.position.set(x, y, z);
+    planets.push(sprite);
+    scene.add(sprite);
+  });
 
 
   group.add(sphere);
@@ -162,7 +207,7 @@ export default () => {
     mixers.forEach((mixer) => {
       mixer.update(delta);
     });
-    group.rotation.y += rotationSpeed;
+    group.rotation.y += (isReadyToRotate && isRotating) ? 0.001 : 0;
     controls.update();
     renderer.render(scene, camera);
   }
@@ -174,12 +219,24 @@ export default () => {
 
     renderer.setSize(width, height);
     renderer.render(scene, camera);
-
-    console.log();
   }
+
+  controls.addEventListener('start', () => {
+    isRotating = false;
+  });
+
+  controls.addEventListener('end', () => {
+    isRotating = true;
+  });
 
   animate();
   onWindowResize();
 
   window.addEventListener('resize', onWindowResize);
+
+  this.toggleNight = (isVisible) => {
+    [...planets, starField].forEach((obj) => {
+      obj.visible = isVisible;
+    });
+  };
 }
