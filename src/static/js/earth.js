@@ -249,7 +249,7 @@ export default function Earth() {
   window.addEventListener('resize', onWindowResize);
 
   this.toggleNight = (isVisible) => {
-    [...planets].forEach((obj) => {
+    [...planets, particleSystem].forEach((obj) => {
       obj.visible = isVisible;
     });
   };
