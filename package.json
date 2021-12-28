@@ -4,14 +4,13 @@
   "description": "Welcome to The Creature World. You have arrived in a nearby magical dimension of love, divine intervention, and possibility.",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf public",
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
     "build:sass": "sass  --no-source-map src/sass:public/css",
     "build:eleventy": "eleventy",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
-    "start": "npm-run-all clean build:sass --parallel watch:*",
-    "build": "npm-run-all clean build:sass build:eleventy"
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:sass build:eleventy"
   },
   "author": "",
   "license": "ISC",
