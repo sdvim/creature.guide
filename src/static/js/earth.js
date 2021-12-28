@@ -121,19 +121,32 @@ export default function Earth() {
   });
   sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
-  starTexture = new THREE.TextureLoader().load("/3d/stars.png");
-  starTexture.wrapS = THREE.RepeatWrapping;
-  starTexture.wrapT = THREE.RepeatWrapping;
-  starTexture.repeat.set(8, 8);
-
-  starGeometry = new THREE.SphereGeometry(1000, 50, 50);
-  starMaterial = new THREE.MeshPhongMaterial({
-    map: starTexture,
-    side: THREE.DoubleSide,
-    opacity: 0.01,
-    shininess: 0
+  var particleCount = 3600,
+  particles = new THREE.Geometry(),
+  pMaterial = new THREE.PointsMaterial({
+    color: 0xbab479,
+    size: 2,
+    transparent: true,
   });
-  starField = new THREE.Mesh(starGeometry, starMaterial);
+
+  // now create the individual particles
+  for (var p = 0; p < particleCount; p++) {
+
+
+    const randCoordinate = () => {
+      return THREE.Math.randInt(50, 650) * ((Math.random() >= 0.5) ? 1 : -1);
+    };
+  var pX = randCoordinate(),
+    pY = randCoordinate(),
+    pZ = randCoordinate(),
+    particle = new THREE.Vector3(pX, pY, pZ);
+
+  particles.vertices.push(particle);
+  }
+
+  var particleSystem = new THREE.Points(particles, pMaterial);
+
+  scene.add(particleSystem);
 
 
   group = new THREE.Group();
@@ -198,7 +211,6 @@ export default function Earth() {
 
 
   group.add(sphere);
-  scene.add(starField);
   scene.add(new THREE.AmbientLight(0xFFFFFF));
   scene.add(group);
 
@@ -237,7 +249,7 @@ export default function Earth() {
   window.addEventListener('resize', onWindowResize);
 
   this.toggleNight = (isVisible) => {
-    [...planets, starField].forEach((obj) => {
+    [...planets].forEach((obj) => {
       obj.visible = isVisible;
     });
   };
