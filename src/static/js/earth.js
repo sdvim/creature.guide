@@ -119,7 +119,7 @@ export default () => {
 				const mixer = new THREE.AnimationMixer(walker);
 				const clip = THREE.AnimationClip.findByName(gltf.animations, 'creature_walkonglobe');
         const action = mixer.clipAction(clip);
-        mixer.timeScale = THREE.Math.randFloat(0.4, 0.8);
+        mixer.timeScale = THREE.Math.randFloat(0.2, 0.6);
         action.play();
         mixers.push(mixer);
 
@@ -135,7 +135,7 @@ export default () => {
 				const mixer = new THREE.AnimationMixer(walker);
 				const clip = THREE.AnimationClip.findByName(gltf.animations, 'creature-swim');
         const action = mixer.clipAction(clip);
-        mixer.timeScale = THREE.Math.randFloat(0.3, 0.5);
+        mixer.timeScale = THREE.Math.randFloat(0.1, 0.3);
         action.play();
         mixers.push(mixer);
 
