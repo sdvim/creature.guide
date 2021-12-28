@@ -72,7 +72,7 @@
     margin: auto;
     height: 100%;
     overflow: hidden;
-    #earth {
+    .earth {
       height: inherit;
       position: relative;
       z-index: 1;
@@ -117,7 +117,7 @@
     &__title {
       font-size: 2rem;
     }
-    #earth {
+    .earth {
       background-size: 83.5vw;
     }
   }
