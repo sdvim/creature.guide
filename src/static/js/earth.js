@@ -55,6 +55,7 @@ const swimmers = [
 
 export default () => {
   let scene, camera, renderer, controls, sphereGeometry, sphereMaterial, sphere, starTexture, starGeometry, starMaterial, starField, group, clock, loader, delta;
+  let rotationSpeed = 0;
   const mixers = [];
 
   const earthEl = document.querySelector('#earth');
@@ -69,8 +70,6 @@ export default () => {
   renderer.setPixelRatio(window.devicePixelRatio);
   
   controls = new OrbitControls(camera, renderer.domElement);
-  controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.05;
   controls.minPolarAngle = Math.PI * 0.35;
   controls.maxPolarAngle = Math.PI * 0.65;
   controls.enablePan = false;
@@ -109,6 +108,12 @@ export default () => {
   loader.load(
     'CreatureWeb_Creature_WalkAndSwim.glb',
     (gltf) => {
+
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.05;
+      controls.update();
+      rotationSpeed = 0.001;
+      earthEl.classList.add('loaded');
 
       walkers.forEach(({x, z}) => {
         const walker = SkeletonUtils.clone(gltf.scene);
@@ -157,7 +162,7 @@ export default () => {
     mixers.forEach((mixer) => {
       mixer.update(delta);
     });
-    group.rotation.y += 0.001;
+    group.rotation.y += rotationSpeed;
     controls.update();
     renderer.render(scene, camera);
   }

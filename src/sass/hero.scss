@@ -74,8 +74,13 @@
     overflow: hidden;
     #earth {
       height: inherit;
-      position:relative;
-      z-index:1;
+      position: relative;
+      z-index: 1;
+      background: url('/img/earth.png') no-repeat center center;
+      background-size: 83.5vh;
+      &.loaded {
+        background: none;
+      }
       &::before {
         content: "";
         display: block;
@@ -111,6 +116,9 @@
     }
     &__title {
       font-size: 2rem;
+    }
+    #earth {
+      background-size: 83.5vw;
     }
   }
 }
