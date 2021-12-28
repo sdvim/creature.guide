@@ -147,9 +147,11 @@ export default function Earth() {
       controls.autoRotate = true;
       controls.autoRotateSpeed = 0.05;
       controls.update();
-      earthEl.classList.add('loaded');
       isReadyToRotate = true;
       isRotating = true;
+      setTimeout(() => {
+        earthEl.classList.add('loaded');
+      }, 500);
 
       walkers.forEach(({x, z}) => {
         const walker = SkeletonUtils.clone(gltf.scene);
