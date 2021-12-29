@@ -176,6 +176,9 @@ export default function Earth() {
     controls.update();
     enableRotation();
     this.isReadyToRotate = true;
+    
+    scene.add(starParticles);
+    scene.add(...planetSprites);
 
     setTimeout(() => {
       this.el.classList.add('loaded');
@@ -244,8 +247,6 @@ export default function Earth() {
   controls.update();
 
   globe.add(sphere);
-  scene.add(starParticles);
-  scene.add(...planetSprites);
   scene.add(new THREE.AmbientLight(0xFFFFFF));
   scene.add(globe);
   animate();
