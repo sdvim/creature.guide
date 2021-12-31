@@ -34,6 +34,28 @@ import * as Util from "./functions.js";
     toggleBtn.addEventListener("click", onToggleTheme);
     earth = new Earth();
     earth.toggleNight(isDarkModeOn);
+
+    let today = new Date();
+    document.querySelectorAll(".timeline__event").forEach((el) => {
+      let { date } = el.dataset;
+      let dateObject = new Date(date);
+      let tense = (today < dateObject) ? "future" : "past";
+      let previous = el.previousElementSibling;
+      let localizedString = dateObject.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      if (localizedString !== "Invalid Date")
+        el.querySelector("time").innerHTML = localizedString;
+      el.classList.add(`timeline__event--${tense}`);
+
+      if (tense === "future" && previous && previous.classList.contains("timeline__event--past")) {
+        previous.classList.add("timeline__event--present");
+        previous.classList.remove("timeline__event--past");
+      }
+    });
   };
 
   const onPageScroll = () => {

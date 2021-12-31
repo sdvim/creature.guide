@@ -15,8 +15,8 @@ layout: base
     <div class="earth"></div>
   </div>
   <div class="hero__content">
-    <h1 class="hero__title">Creature World</h1>
-    <h2 class="hero__welcome">Welcome to the Creature World. You have arrived in a nearby magical dimension of love, divine intervention, and possibility.</h2>
+    <h1 class="hero__title">{{ hero.title }}</h1>
+    <h2 class="hero__welcome">{{ hero.welcome }}</h2>
     <nav class="hero__links">
     {% for link in links %}
       <a class="hero__link hero__link--{{ link.title | lower }}" href="{{ link.url }}" target="_blank">
@@ -28,16 +28,16 @@ layout: base
 </div>
 
 <section>
-  <h2>Journey Thus Far</h2>
+  <h2>The Journey</h2>
   <div class="timeline grid">
   {% for event in timeline %}
-    {% set el = 'div' if event.future else 'article' %}
-    {% set modifier = 'future' if event.future else 'present' %}
-    <{{el}} class="timeline__event timeline__event--{{ modifier }}">
+    <div class="timeline__event" data-date="{{ event.date }}">
       <h3>{{ event.title }}</h3>
-      <h4>{{ event.date }}</h4>
+      <h4><time>{{ event.date }}</time></h4>
+      {% if event.body %}
       <p>{{ event.body | striptags(true) | replace('{', '<a href="' + event.linkUrl + '" target="_blank">') | replace('}', '</a>') | nl2br | safe }}</p>
-    </{{el}}>
+      {% endif %}
+    </div>
   {% endfor %}
   </div>
 </section>

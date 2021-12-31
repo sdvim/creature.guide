@@ -56,7 +56,7 @@ section {
         background: transparent;
       }
     }
-    &--present:last-of-type::before {
+    &--present::before {
       background: linear-gradient(var(--secondary-color) 10%, transparent 90%);
     }
   }
