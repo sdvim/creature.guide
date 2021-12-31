@@ -1,13 +1,13 @@
 [
   {
-    "question": "Where can I get a Creature?",
-    "answer": "The secondary market on {OpenSea} or [NiftyGateway}.",
-    "linkUrl": "//opensea.io/collection/creatureworld",
-    "linkUrl2": "//niftygateway.com/marketplace?collection=0xc92ceddfb8dd984a89fb494c376f9a48b999aafc&filters[onSale]=true&niftyType=1"
+    "question": "How can I participate?",
+    "answer": "One single Creature grants access to all Creature World exclusive experiences."
   },
   {
-    "question": "Do I need anything else to be included in the Creature’s Journeys?",
-    "answer": "No, holding a single Creature is enough."
+    "question": "Where can I get a Creature?",
+    "answer": "All 10,000 creatures have already been distributed by us and are now only available on the secondary market. Visit {OpenSea} or [NiftyGateway} to get one. Coming to Coinbase NFT soon.",
+    "linkUrl": "//opensea.io/collection/creatureworld",
+    "linkUrl2": "//niftygateway.com/marketplace?collection=0xc92ceddfb8dd984a89fb494c376f9a48b999aafc&filters[onSale]=true&niftyType=1"
   },
   {
     "question": "How can I check my Creature’s rarity?",
@@ -15,6 +15,6 @@
   },
   {
     "question": "Do I have IP rights over my creature?",
-    "answer": "While we encourage people to make memes and derivative artwork of their Creature, no one is granted commercial license or IP ownership."
+    "answer": "While we encourage people to make content and derivative artwork of their Creature, no one is granted commercial license or IP ownership."
   }
 ]
