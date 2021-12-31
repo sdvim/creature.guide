@@ -55,7 +55,9 @@ layout: base
   {% for event in timeline %}
     <div class="timeline__event" data-date="{{ event.date }}">
       <h3>{{ event.title }}</h3>
+      {% if event.date %}
       <h4><time>{{ event.date }}</time></h4>
+      {% endif %}
       {% if event.body %}
       <p>{{ event.body | striptags(true) | replace('{', '<a href="' + event.linkUrl + '" target="_blank">') | replace('}', '</a>') | nl2br | safe }}</p>
       {% endif %}
