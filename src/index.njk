@@ -69,7 +69,7 @@ layout: base
   <div class="faq">
   {% for qa in faq %}
     <h3>{{ qa.question }}</h3>
-    <p>{{ qa.answer }}</p>
+    <p>{{ qa.answer | striptags(true) | replace('{', '<a href="' + qa.linkUrl + '" target="_blank">') | replace('}', '</a>') | replace('[', '<a href="' + qa.linkUrl2 + '" target="_blank">') | nl2br | safe  }}</p>
   {% endfor %}
   </div>
 </section>

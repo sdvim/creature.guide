@@ -109,12 +109,14 @@ h4 {
 
 p {
   margin-top: 1rem;
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .bolder {
   font-size: 1.2em;
   font-weight: 700;
-  margin-top: 0;
 }
 
 blockquote a,

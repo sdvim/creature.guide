@@ -1,7 +1,9 @@
 [
   {
     "question": "Where can I get a Creature?",
-    "answer": "The secondary market on OpenSea or NiftyGateway."
+    "answer": "The secondary market on {OpenSea} or [NiftyGateway}.",
+    "linkUrl": "//opensea.io/collection/creatureworld",
+    "linkUrl2": "//niftygateway.com/marketplace?collection=0xc92ceddfb8dd984a89fb494c376f9a48b999aafc&filters[onSale]=true&niftyType=1"
   },
   {
     "question": "Do I need anything else to be included in the Creature’s Journeys?",
