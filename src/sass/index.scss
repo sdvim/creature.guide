@@ -182,9 +182,11 @@ p a {
     padding: 2rem 1rem;
   }
   .white-box {
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  //   border-left: none;
+  //   border-right: none;
+  //   border-radius: 0;
   }
 }
 
