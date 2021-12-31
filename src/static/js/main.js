@@ -8,9 +8,11 @@ import * as Util from "./functions.js";
   let scrolling = false;
   let lastKnownScrollPosition = window.scrollY;
 
-  const rainbowScales = [...Array(101)].map((_, i) => ({
-    x: Util.lerp(0.05, 1, Util.easeInCirc(i / 100)),
-    y: Util.lerp(0.5, 1, Util.easeInExpo(i / 100)),
+  const rainbowPrecision = 5000;
+
+  const rainbowScales = [...Array(rainbowPrecision + 1)].map((_, i) => ({
+    x: Util.lerp(0.05, 1, Util.easeInSine(i / rainbowPrecision)),
+    y: i / rainbowPrecision,
   }));
 
   const onToggleTheme = (e) => {
@@ -65,7 +67,7 @@ import * as Util from "./functions.js";
         const docHeight = document.body.offsetHeight;
         const winHeight = window.innerHeight;
         const scrollPercent = lastKnownScrollPosition / (docHeight - winHeight);
-        const index = Math.min(100, Math.max(0, Math.round(scrollPercent * 100)));
+        const index = Math.min(rainbowPrecision, Math.max(0, Math.round(scrollPercent * rainbowPrecision)));
         const { x, y } = rainbowScales[index];
         document.querySelector("#rainbow").style.transform = `scale(${x}, ${y})`;
         document.querySelector("#rainbow").style.opacity = Math.min(1, x * 2);

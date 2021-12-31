@@ -119,6 +119,12 @@ p {
   font-weight: 700;
 }
 
+main {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
 blockquote a,
 p a {
   color: currentColor;
@@ -164,6 +170,8 @@ p a {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  height: 100vh;
+  position: relative;
   text-align: center;
   padding: 0 1rem;
 }
@@ -184,9 +192,6 @@ p a {
   .white-box {
     margin-left: 1rem;
     margin-right: 1rem;
-  //   border-left: none;
-  //   border-right: none;
-  //   border-radius: 0;
   }
 }
 
