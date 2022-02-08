@@ -3,24 +3,136 @@
     "name": "Danny",
     "twitter": "dannycoleee",
     "role": "Artist | Co-Founder",
+    "primary": true,
     "creature": 8831
   },
   {
     "name": "Jake",
     "twitter": "KidHastings",
     "role": "Operations | Co-Founder",
+    "primary": true,
     "creature": 4392
-  },
-  {
-    "name": "Kevin",
-    "twitter": "PhatStraws",
-    "role": "Developer | Co-Founder",
-    "creature": 7234
   },
   {
     "name": "Jacob",
     "twitter": "remixrfi",
     "role": "Operations | Co-Founder",
+    "primary": true,
     "creature": 9667
+  },
+  {
+    "name": "London",
+    "twitter": "LondonOConnor",
+    "primary": true,
+    "role": "Clarity",
+    "creature": 4465
+  },
+  {
+    "name": "Winston",
+    "role": "Growth",
+    "twitter": "MrWinstonWolf_",
+    "creature": 0
+  },
+  {
+    "name": "James",
+    "role": "Business Development",
+    "twitter": "jamesdrake1492",
+    "creature": 6453
+  },
+  {
+    "name": "Connor",
+    "role": "Project Management",
+    "twitter": "vansqueeb",
+    "creature": 2406
+  },
+  {
+    "name": "Talia",
+    "role": "Project Management",
+    "twitter": "taliagarg",
+    "creature": 0
+  },
+  {
+    "name": "Nico",
+    "role": "Product, Engineering",
+    "twitter": "Nico_Valencia",
+    "creature": 2762
+  },
+  {
+    "name": "Katy",
+    "role": "Product, Engineering",
+    "twitter": "0xKaty",
+    "creature": 0
+  },
+  {
+    "name": "Luke",
+    "role": "Customer Relations",
+    "twitter": "requisit",
+    "creature": 0
+  },
+  {
+    "name": "Roach",
+    "role": "Fulfilment",
+    "twitter": "",
+    "creature": 0
+  },
+  {
+    "name": "Matt",
+    "role": "Film, Illustration",
+    "twitter": "",
+    "creature": 0
+  },
+  {
+    "name": "Dijo",
+    "role": "Community Management",
+    "twitter": "dijosong",
+    "creature": 9999
+  },
+  {
+    "name": "Humpstyles",
+    "role": "Community Management",
+    "twitter": "humpstyles",
+    "creature": 6387
+  },
+  {
+    "name": "Jack LaFond",
+    "role": "Community Technology",
+    "twitter": "laf0nd",
+    "creature": 2910
+  },
+  {
+    "name": "Steve",
+    "role": "Design, Engineering",
+    "twitter": "s17a_xyz",
+    "creature": 8461
+  },
+  {
+    "name": "Eva",
+    "role": "Production Design",
+    "twitter": "bottomlessbellinis",
+    "creature": 0
+  },
+  {
+    "name": "Amy",
+    "role": "Moderation",
+    "twitter": "m0mburn",
+    "creature": 3618
+  },
+  {
+    "name": "Nick",
+    "role": "Moderation",
+    "twitter": "NickyBeaster",
+    "creature": 943
+  },
+  {
+    "name": "Diogo",
+    "role": "Moderation",
+    "twitter": "dmcrypt_",
+    "creature": 286
+  },
+  {
+    "name": "Dice",
+    "role": "Moderation",
+    "twitter": "slicemasterD",
+    "creature": 4835
   }
 ]

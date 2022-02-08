@@ -83,7 +83,7 @@ layout: base
 <section>
   <h2>The Team</h2>
   <div class="team grid">
-  {% for teammate in team %}
+  {% for teammate in team | selectattr("primary") %}
     <div class="team__avatar">
       <img class="team__avatar__image" src="/img/{{ teammate.creature }}.jpg" />
       <img class="team__avatar__eyes" src="/img/{{ teammate.creature }}-eyes.jpg">
@@ -91,9 +91,11 @@ layout: base
     <div class="team__info">
       <h3>{{ teammate.name }}</h3>
       <h4>{{ teammate.role }}</h4>
+      {% if teammate.twitter %}
       <p>
         <a href="//twitter.com/{{ teammate.twitter }}" target="_blank">@{{ teammate.twitter }}</a>
       </p>
+      {% endif %}
     </div>
   {% endfor %}
   </div>
