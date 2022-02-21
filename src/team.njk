@@ -1,0 +1,56 @@
+---
+layout: base
+title: Team
+---
+
+<section>
+  <h2>The Team</h2>
+  <div class="team grid">
+  {% for teammate in team | selectattr("primary") %}
+    <div class="team__avatar">
+      <img class="team__avatar__image" src="/img/{{ teammate.creature }}.jpg" />
+      <img class="team__avatar__eyes" src="/img/{{ teammate.creature }}-eyes.jpg">
+    </div>
+    <div class="team__info">
+      <h3>{{ teammate.name }}</h3>
+      <h4>{{ teammate.role }}</h4>
+      {% if teammate.twitter %}
+      <p>
+        <a href="//twitter.com/{{ teammate.twitter }}" target="_blank">@{{ teammate.twitter }}</a>
+      </p>
+      {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+</section>
+
+<section>
+  <h2>Community Team</h2>
+  <div class="team grid">
+  {% for teammate in team | rejectattr("primary") | sort(attribute="name") %}
+    <div class="team__avatar team__avatar--small">
+      <img class="team__avatar__image" src="/img/{{ teammate.creature }}.jpg" />
+    </div>
+    <div class="team__info team__info--small">
+      <h3>{{ teammate.name }}</h3>
+      <h4>{{ teammate.role }}</h4>
+      {% if teammate.twitter %}
+      <p>
+        <a href="//twitter.com/{{ teammate.twitter }}" target="_blank">@{{ teammate.twitter }}</a>
+      </p>
+      {% endif %}
+      {% if teammate.instagram %}
+      <p>
+        <a href="//instagram.com/{{ teammate.instagram }}" target="_blank">@{{ teammate.instagram }}</a>
+      </p>
+      {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+</section>
+
+<section>
+  <div class="centered">
+    <a class="button" href="/">Go back Home</a>
+  </div>
+</section>

@@ -86,25 +86,31 @@ h6 {
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
+  font-size: 3em;
+  margin-bottom: 2 / 3em;
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2em;
+  margin-bottom: 1em;
 }
 
 h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.5em;
+  margin-bottom: 1 / 1.5em;
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: 400;
   font-style: italic;
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
+}
+
+h5 {
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-bottom: 1em;
 }
 
 p {
