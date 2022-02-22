@@ -8,8 +8,10 @@ import * as Util from "./functions.js";
   let scrolling = false;
   let lastKnownScrollPosition = window.scrollY;
 
-  const rainbowPrecision = 5000;
+  const earthEl = document.querySelector(".earth");
 
+  const rainbowEl = document.querySelector("#rainbow");
+  const rainbowPrecision = 5000;
   const rainbowScales = [...Array(rainbowPrecision + 1)].map((_, i) => ({
     x: Util.lerp(0.05, 1, Util.easeInSine(i / rainbowPrecision)),
     y: i / rainbowPrecision,
@@ -24,7 +26,7 @@ import * as Util from "./functions.js";
     document.body.classList.add(newTheme);
     document.body.classList.remove(oldTheme);
     localStorage.setItem("theme", newTheme);
-    earth.toggleNight(toggleDarkMode);
+    earth?.toggleNight(toggleDarkMode);
   };
 
   const onPageLoad = () => {
@@ -34,8 +36,11 @@ import * as Util from "./functions.js";
 
     const toggleBtn = document.querySelector(".header__theme-toggle");
     toggleBtn.addEventListener("click", onToggleTheme);
-    earth = new Earth();
-    earth.toggleNight(isDarkModeOn);
+
+    if (earthEl) {
+      earth = new Earth();
+      earth.toggleNight(isDarkModeOn);  
+    }
 
     let today = new Date();
     document.querySelectorAll(".timeline__event").forEach((el) => {
@@ -62,15 +67,15 @@ import * as Util from "./functions.js";
 
   const onPageScroll = () => {
     lastKnownScrollPosition = window.scrollY;
-    if (!scrolling) {
+    if (!scrolling && rainbowEl) {
       window.requestAnimationFrame(() => {
         const docHeight = document.body.offsetHeight;
         const winHeight = window.innerHeight;
         const scrollPercent = lastKnownScrollPosition / (docHeight - winHeight);
         const index = Math.min(rainbowPrecision, Math.max(0, Math.round(scrollPercent * rainbowPrecision)));
         const { x, y } = rainbowScales[index];
-        document.querySelector("#rainbow").style.transform = `scale(${x}, ${y})`;
-        document.querySelector("#rainbow").style.opacity = Math.min(1, x * 2);
+        rainbowEl.style.transform = `scale(${x}, ${y})`;
+        rainbowEl.style.opacity = Math.min(1, x * 2);
         scrolling = false;
       });
       scrolling = true;
@@ -78,5 +83,5 @@ import * as Util from "./functions.js";
   };
 
   window.addEventListener("load", onPageLoad);
-  window.addEventListener("scroll", onPageScroll);
+  if (rainbowEl) window.addEventListener("scroll", onPageScroll);
 })();
