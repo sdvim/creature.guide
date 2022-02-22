@@ -1,17 +1,22 @@
 .header {
+  background: var(--background-color);
+  backdrop-filter: blur;
   position: fixed;
-  display: flex;
   top: 0;
   width: 100%;
-  padding: 0.5rem;
   z-index: 2;
   a {
     color: inherit;
+    text-decoration: none;
   }
-  &__theme-toggle {
+  &__wrapper {
+    padding: 0.5rem 0;
+    display: flex;
+    margin: 0 auto;
+  }
+  &__link {
     background: transparent;
     border: none;
-    margin-left: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +25,13 @@
     height: 1.5em;
     vertical-align: middle;
     color: inherit;
+    margin-right: 1.5em;
+    &:first-child {
+      margin-right: auto;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
     span {
       line-height: 1;
       // font-size: 2em;
