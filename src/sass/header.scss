@@ -1,5 +1,4 @@
 .header {
-  background: var(--background-color);
   backdrop-filter: blur;
   position: fixed;
   top: 0;
@@ -15,6 +14,7 @@
     margin: 0 auto;
   }
   &__link {
+    text-shadow: 0 0 0.25em var(--background-color);
     background: transparent;
     border: none;
     display: flex;
