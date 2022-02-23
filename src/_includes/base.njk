@@ -78,6 +78,9 @@
   <body class="{% if rainbow %} rainbow__bg {% endif %}">
     <main>
       <header class="header">
+        {% if page.url != "/keynote/" %}
+        <a class="button" href="/keynote" target="_blank">Watch the Creature Keynote</a>
+        {% endif %}
         <section class="header__wrapper">
           <a class="header__link" href="/">Home</a>
           <button class="header__link header__theme-toggle">Light / Dark</button>
