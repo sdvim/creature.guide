@@ -5,7 +5,6 @@
   width: 100%;
   z-index: 2;
   a {
-    color: inherit;
     text-decoration: none;
   }
   .button {
@@ -17,6 +16,7 @@
     margin: 0 auto;
   }
   &__link {
+    color: inherit;
     text-shadow: 0 0 0.25em var(--background-color);
     background: transparent;
     border: none;
