@@ -44,9 +44,10 @@ import * as Util from "./functions.js";
 
     let today = new Date();
     document.querySelectorAll(".timeline__event").forEach((el) => {
-      let { date } = el.dataset;
+      let { date, past } = el.dataset;
       let dateObject = new Date(date);
-      let tense = (!date || today < dateObject) ? "future" : "past";
+      let hasNumber = /\d/.test(date);
+      let tense = (!date || !hasNumber && !past || today < dateObject) ? "future" : "past";
       let previous = el.previousElementSibling;
       let localizedString = dateObject.toLocaleDateString('en-US', {
         weekday: 'long',

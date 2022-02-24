@@ -51,7 +51,7 @@ rainbow: true
   <h2>The Journey</h2>
   <div class="timeline grid">
   {% for event in timeline %}
-    <div class="timeline__event" data-date="{{ event.date }}">
+    <div class="timeline__event" data-date="{{ event.date }}" data-past="{{ event.past }}">
       <h3>{{ event.title }}</h3>
       {% if event.date %}
       <h4><time>{{ event.date }}</time></h4>

@@ -3,6 +3,7 @@
     "title": "The Inception",
     "date": "Long, Long Ago",
     "body": "Danny Cole and the Creature World was born. Read more about the origins of the wonderful place the Creatures call home {here}.",
+    "past": true,
     "linkUrl": "//twitter.com/dannycoleee/status/1424465785431465990"
   },
   {
@@ -36,11 +37,27 @@
     "body": "An everyday wear and a conversation starter made exclusively for our family."
   },
   {
+    "title": "Keynote",
+    "date": "February 20, 2022",
+    "body": "A video about who we are, where we come from, and where we’re going. Watch it {here}.",
+    "linkUrl": "/keynote"
+  },
+  {
+    "title": "Second Journey Claim",
+    "date": "February",
+    "body": "Upon the closure of the second journey, holders will be able to claim an art piece specific to their experience in The Creature Finds It’s Voice."
+  },
+  {
+    "title": "Traveling Creature",
+    "date": "March",
+    "body": "The second release from Creature Labs; a collaborative art experience pushing the boundaries of web3 technology."
+  },
+  {
     "title": "The Creature World docu-series",
     "body": "Welcome to the inside of Creature World. Powered by care, resilience, and love. To be 21 in New York during a pandemic and giving your all with your best friends."
   },
   {
-    "title": "Creature Labs - TBA"
+    "title": "Creature Labs"
   },
   {
     "title": "Creature’s Voice… Claim",
