@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: src/static/img
+public_folder: img
+# i18n:
+#   locales: [en, es]
+#   default_locale: en
+collections:
+- name: lists
+  label: Lists
+  files:
+  - name: faq
+    label: FAQ
+    file: src/_data/faq.json
+    fields:
+    - name: question
+      label: Question
+      widget: string
+    - name: answer
+      label: Answer
+      widget: markdown
+  - name: timeline
+    label: Timeline
+    file: src/_data/timeline.json
+    fields:
+    - name: title
+      label: Title
+      widget: string
+    - name: date
+      label: Date
+      widget: string
+    - name: body
+      label: Body
+      widget: markdown
