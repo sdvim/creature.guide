@@ -3,7 +3,6 @@
     "title": "The Inception",
     "date": "Long, Long Ago",
     "body": "Danny Cole and the Creature World was born. Read more about the origins of the wonderful place the Creatures call home {here}.",
-    "past": true,
     "linkUrl": "//twitter.com/dannycoleee/status/1424465785431465990"
   },
   {
@@ -44,16 +43,30 @@
   },
   {
     "title": "Second Journey Claim",
-    "date": "February",
+    "date": "March 8, 2022",
     "body": "Upon the closure of the second journey, holders will be able to claim an art piece specific to their experience in The Creature Finds It’s Voice."
   },
   {
     "title": "Traveling Creature",
-    "date": "March",
+    "date": "March 22, 2022",
     "body": "The second release from Creature Labs; a collaborative art experience pushing the boundaries of web3 technology."
   },
   {
-    "title": "The Creature World docu-series",
-    "body": "Welcome to the inside of Creature World. Powered by care, resilience, and love. To be 21 in New York during a pandemic and giving your all with your best friends."
+    "title": "VeeCon",
+    "date": "May 20, 2022",
+    "label": "May 20-22, 2022",
+    "body": "The Creature wants to play with you in Minneapolis... coming soon."
+  },
+  {
+    "title": "NFT.NYC",
+    "date": "June 21, 2022",
+    "label": "June 21-23, 2022",
+    "body": "A series of dinners, meetups and events on our home turf. See you there."
+  },
+  {
+    "title": "Creature Friends",
+    "date": "Q4 2022",
+    "future": true,
+    "body": "Creature World's biggest release yet - a journey of discovery. The Creature World game, coming soon."
   }
 ]
