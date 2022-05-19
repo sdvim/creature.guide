@@ -44,24 +44,16 @@ import * as Util from "./functions.js";
 
     let today = new Date();
     document.querySelectorAll(".timeline__event").forEach((el) => {
-      let { date, past } = el.dataset;
+      let { date, future } = el.dataset;
       let dateObject = new Date(date);
-      let hasNumber = /\d/.test(date);
-      let tense = (!date || !hasNumber && !past || today < dateObject) ? "future" : "past";
-      let previous = el.previousElementSibling;
-      let localizedString = dateObject.toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-      if (localizedString !== "Invalid Date")
-        el.querySelector("time").innerHTML = localizedString;
-      el.classList.add(`timeline__event--${tense}`);
+      let inFuture = future || !date || today < dateObject;
+      let previousEvent = el.previousElementSibling;
 
-      if (tense === "future" && previous && previous.classList.contains("timeline__event--past")) {
-        previous.classList.add("timeline__event--present");
-        previous.classList.remove("timeline__event--past");
+      if (!inFuture) {
+        el.classList.add("timeline__event--past");
+      } else if (previousEvent?.classList.contains("timeline__event--past")) {
+        previousEvent.classList.add("timeline__event--present");
+        previousEvent.classList.remove("timeline__event--past"); 
       }
     });
   };

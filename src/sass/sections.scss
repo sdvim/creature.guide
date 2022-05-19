@@ -33,6 +33,7 @@ section {
       transform: translate(-50%);
     }
     &::before {
+      display: none;
       width: 6px;
       height: 100%;
       background: var(--secondary-color);
@@ -40,7 +41,7 @@ section {
     &::after {
       width: 2.5rem;
       height: 2.5rem;
-      background: var(--secondary-color);
+      background: transparent;
       border-radius: 50%;
       margin-top: -0.25rem;
       border: 6px solid var(--secondary-color);
@@ -48,12 +49,13 @@ section {
     &:last-child::before {
       display: none;
     }
-    &--future {
+    &--past,
+    &--present {
       &::before {
-        display: none;
+        display: block;
       }
       &::after {
-        background: transparent;
+        background: var(--secondary-color);
       }
     }
     &--present::before {
