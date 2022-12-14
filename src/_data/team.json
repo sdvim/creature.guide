@@ -20,11 +20,6 @@
     "creature": 2406
   },
   {
-    "name": "Talia",
-    "role": "Project Management",
-    "creature": 6525
-  },
-  {
     "name": "Nico",
     "role": "Product, Engineering",
     "twitter": "Nico_Valencia",
@@ -35,18 +30,6 @@
     "role": "Product, Engineering",
     "twitter": "0xKaty",
     "creature": 8672
-  },
-  {
-    "name": "Luke",
-    "role": "Customer Relations",
-    "twitter": "requisit_fa",
-    "creature": 288
-  },
-  {
-    "name": "Roach",
-    "role": "Fulfilment",
-    "twitter": "",
-    "creature": 4529
   },
   {
     "name": "Matt",
